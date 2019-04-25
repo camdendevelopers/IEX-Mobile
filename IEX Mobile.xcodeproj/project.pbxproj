@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C440D2272546700C6609B /* AppDelegate.swift */; };
+		8D7C44102272546700C6609B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C440F2272546700C6609B /* ViewController.swift */; };
+		8D7C44132272546700C6609B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44112272546700C6609B /* Main.storyboard */; };
+		8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */; };
+		8D7C44182272546800C6609B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44172272546800C6609B /* Assets.xcassets */; };
+		8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44192272546800C6609B /* LaunchScreen.storyboard */; };
+		8D7C44262272546800C6609B /* IEX_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44252272546800C6609B /* IEX_MobileTests.swift */; };
+		8D7C44312272546800C6609B /* IEX_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44302272546800C6609B /* IEX_MobileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D7C44222272546800C6609B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7C44022272546700C6609B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D7C44092272546700C6609B;
+			remoteInfo = "IEX Mobile";
+		};
+		8D7C442D2272546800C6609B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D7C44022272546700C6609B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D7C44092272546700C6609B;
+			remoteInfo = "IEX Mobile";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D7C440A2272546700C6609B /* IEX Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IEX Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7C440D2272546700C6609B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D7C440F2272546700C6609B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D7C44122272546700C6609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D7C44152272546700C6609B /* IEX_Mobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IEX_Mobile.xcdatamodel; sourceTree = "<group>"; };
+		8D7C44172272546800C6609B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D7C441A2272546800C6609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D7C441C2272546800C6609B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D7C44212272546800C6609B /* IEX MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IEX MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7C44252272546800C6609B /* IEX_MobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEX_MobileTests.swift; sourceTree = "<group>"; };
+		8D7C44272272546800C6609B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D7C442C2272546800C6609B /* IEX MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IEX MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D7C44302272546800C6609B /* IEX_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEX_MobileUITests.swift; sourceTree = "<group>"; };
+		8D7C44322272546800C6609B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D7C44072272546700C6609B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C441E2272546800C6609B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C44292272546800C6609B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D7C44012272546700C6609B = {
+			isa = PBXGroup;
+			children = (
+				8D7C440C2272546700C6609B /* IEX Mobile */,
+				8D7C44242272546800C6609B /* IEX MobileTests */,
+				8D7C442F2272546800C6609B /* IEX MobileUITests */,
+				8D7C440B2272546700C6609B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8D7C440B2272546700C6609B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C440A2272546700C6609B /* IEX Mobile.app */,
+				8D7C44212272546800C6609B /* IEX MobileTests.xctest */,
+				8D7C442C2272546800C6609B /* IEX MobileUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D7C440C2272546700C6609B /* IEX Mobile */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C440D2272546700C6609B /* AppDelegate.swift */,
+				8D7C440F2272546700C6609B /* ViewController.swift */,
+				8D7C44112272546700C6609B /* Main.storyboard */,
+				8D7C44172272546800C6609B /* Assets.xcassets */,
+				8D7C44192272546800C6609B /* LaunchScreen.storyboard */,
+				8D7C441C2272546800C6609B /* Info.plist */,
+				8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */,
+			);
+			path = "IEX Mobile";
+			sourceTree = "<group>";
+		};
+		8D7C44242272546800C6609B /* IEX MobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C44252272546800C6609B /* IEX_MobileTests.swift */,
+				8D7C44272272546800C6609B /* Info.plist */,
+			);
+			path = "IEX MobileTests";
+			sourceTree = "<group>";
+		};
+		8D7C442F2272546800C6609B /* IEX MobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C44302272546800C6609B /* IEX_MobileUITests.swift */,
+				8D7C44322272546800C6609B /* Info.plist */,
+			);
+			path = "IEX MobileUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D7C44092272546700C6609B /* IEX Mobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D7C44352272546800C6609B /* Build configuration list for PBXNativeTarget "IEX Mobile" */;
+			buildPhases = (
+				8D7C44062272546700C6609B /* Sources */,
+				8D7C44072272546700C6609B /* Frameworks */,
+				8D7C44082272546700C6609B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IEX Mobile";
+			productName = "IEX Mobile";
+			productReference = 8D7C440A2272546700C6609B /* IEX Mobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D7C44202272546800C6609B /* IEX MobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D7C44382272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileTests" */;
+			buildPhases = (
+				8D7C441D2272546800C6609B /* Sources */,
+				8D7C441E2272546800C6609B /* Frameworks */,
+				8D7C441F2272546800C6609B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D7C44232272546800C6609B /* PBXTargetDependency */,
+			);
+			name = "IEX MobileTests";
+			productName = "IEX MobileTests";
+			productReference = 8D7C44212272546800C6609B /* IEX MobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8D7C442B2272546800C6609B /* IEX MobileUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D7C443B2272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileUITests" */;
+			buildPhases = (
+				8D7C44282272546800C6609B /* Sources */,
+				8D7C44292272546800C6609B /* Frameworks */,
+				8D7C442A2272546800C6609B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D7C442E2272546800C6609B /* PBXTargetDependency */,
+			);
+			name = "IEX MobileUITests";
+			productName = "IEX MobileUITests";
+			productReference = 8D7C442C2272546800C6609B /* IEX MobileUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D7C44022272546700C6609B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Camden Developers";
+				TargetAttributes = {
+					8D7C44092272546700C6609B = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					8D7C44202272546800C6609B = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 8D7C44092272546700C6609B;
+					};
+					8D7C442B2272546800C6609B = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 8D7C44092272546700C6609B;
+					};
+				};
+			};
+			buildConfigurationList = 8D7C44052272546700C6609B /* Build configuration list for PBXProject "IEX Mobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D7C44012272546700C6609B;
+			productRefGroup = 8D7C440B2272546700C6609B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D7C44092272546700C6609B /* IEX Mobile */,
+				8D7C44202272546800C6609B /* IEX MobileTests */,
+				8D7C442B2272546800C6609B /* IEX MobileUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D7C44082272546700C6609B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */,
+				8D7C44182272546800C6609B /* Assets.xcassets in Resources */,
+				8D7C44132272546700C6609B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C441F2272546800C6609B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C442A2272546800C6609B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D7C44062272546700C6609B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7C44102272546700C6609B /* ViewController.swift in Sources */,
+				8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */,
+				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C441D2272546800C6609B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7C44262272546800C6609B /* IEX_MobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D7C44282272546800C6609B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7C44312272546800C6609B /* IEX_MobileUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D7C44232272546800C6609B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D7C44092272546700C6609B /* IEX Mobile */;
+			targetProxy = 8D7C44222272546800C6609B /* PBXContainerItemProxy */;
+		};
+		8D7C442E2272546800C6609B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D7C44092272546700C6609B /* IEX Mobile */;
+			targetProxy = 8D7C442D2272546800C6609B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8D7C44112272546700C6609B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D7C44122272546700C6609B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8D7C44192272546800C6609B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D7C441A2272546800C6609B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8D7C44332272546800C6609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D7C44342272546800C6609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D7C44362272546800C6609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D7C44372272546800C6609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX Mobile/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-Mobile";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D7C44392272546800C6609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IEX Mobile.app/IEX Mobile";
+			};
+			name = Debug;
+		};
+		8D7C443A2272546800C6609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX MobileTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-MobileTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IEX Mobile.app/IEX Mobile";
+			};
+			name = Release;
+		};
+		8D7C443C2272546800C6609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX MobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-MobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IEX Mobile";
+			};
+			name = Debug;
+		};
+		8D7C443D2272546800C6609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KD674EGM5X;
+				INFOPLIST_FILE = "IEX MobileUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renamari.IEX-MobileUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IEX Mobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D7C44052272546700C6609B /* Build configuration list for PBXProject "IEX Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D7C44332272546800C6609B /* Debug */,
+				8D7C44342272546800C6609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D7C44352272546800C6609B /* Build configuration list for PBXNativeTarget "IEX Mobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D7C44362272546800C6609B /* Debug */,
+				8D7C44372272546800C6609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D7C44382272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D7C44392272546800C6609B /* Debug */,
+				8D7C443A2272546800C6609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D7C443B2272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D7C443C2272546800C6609B /* Debug */,
+				8D7C443D2272546800C6609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D7C44152272546700C6609B /* IEX_Mobile.xcdatamodel */,
+			);
+			currentVersion = 8D7C44152272546700C6609B /* IEX_Mobile.xcdatamodel */;
+			path = IEX_Mobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8D7C44022272546700C6609B /* Project object */;
+}
