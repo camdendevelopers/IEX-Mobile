@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B93F88A417D34CE0A10AB5 /* Pods_IEX_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */; };
+		398D917F930C28F597E1BB14 /* Pods_IEX_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298786589319D5BF7A18C445 /* Pods_IEX_MobileTests.framework */; };
 		8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C440D2272546700C6609B /* AppDelegate.swift */; };
 		8D7C44102272546700C6609B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C440F2272546700C6609B /* ViewController.swift */; };
 		8D7C44132272546700C6609B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44112272546700C6609B /* Main.storyboard */; };
@@ -15,6 +17,15 @@
 		8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44192272546800C6609B /* LaunchScreen.storyboard */; };
 		8D7C44262272546800C6609B /* IEX_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44252272546800C6609B /* IEX_MobileTests.swift */; };
 		8D7C44312272546800C6609B /* IEX_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44302272546800C6609B /* IEX_MobileUITests.swift */; };
+		8D7C443F2272549800C6609B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C443E2272549800C6609B /* Storyboard.swift */; };
+		8D7C44442272564E00C6609B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44432272564E00C6609B /* Authentication.storyboard */; };
+		8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444522725F8300C6609B /* AuthenticationViewController.swift */; };
+		8D7C44482272606800C6609B /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44472272606800C6609B /* Segues.swift */; };
+		8D7C444A227260F600C6609B /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C4449227260F600C6609B /* Styles.swift */; };
+		8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444B227261B900C6609B /* ViewController+Loading.swift */; };
+		8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444E2272635E00C6609B /* UIColor+IEX.swift */; };
+		8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C445022726E6B00C6609B /* UITextField+Text.swift */; };
+		FD7DC1E2154628AAACFC634A /* Pods_IEX_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07A5885263EB9693E9269E2D /* Pods-IEX Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX Mobile.release.xcconfig"; path = "Target Support Files/Pods-IEX Mobile/Pods-IEX Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		298786589319D5BF7A18C445 /* Pods_IEX_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDBB08A7A8C718B60682EB8 /* Pods-IEX Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX Mobile.debug.xcconfig"; path = "Target Support Files/Pods-IEX Mobile/Pods-IEX Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		5E48765AD0C86E96D1EC79EA /* Pods-IEX MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileTests.release.xcconfig"; path = "Target Support Files/Pods-IEX MobileTests/Pods-IEX MobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4D628C33716D69AD05A8D4 /* Pods-IEX MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileTests/Pods-IEX MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E75F37A9DD6AC39EE1AE5DD /* Pods-IEX MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.release.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D7C440A2272546700C6609B /* IEX Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IEX Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7C440D2272546700C6609B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D7C440F2272546700C6609B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +67,16 @@
 		8D7C442C2272546800C6609B /* IEX MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IEX MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7C44302272546800C6609B /* IEX_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEX_MobileUITests.swift; sourceTree = "<group>"; };
 		8D7C44322272546800C6609B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D7C443E2272549800C6609B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		8D7C44432272564E00C6609B /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		8D7C444522725F8300C6609B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		8D7C44472272606800C6609B /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		8D7C4449227260F600C6609B /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		8D7C444B227261B900C6609B /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
+		8D7C444E2272635E00C6609B /* UIColor+IEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IEX.swift"; sourceTree = "<group>"; };
+		8D7C445022726E6B00C6609B /* UITextField+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Text.swift"; sourceTree = "<group>"; };
+		ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7DC1E2154628AAACFC634A /* Pods_IEX_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				398D917F930C28F597E1BB14 /* Pods_IEX_MobileTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B93F88A417D34CE0A10AB5 /* Pods_IEX_MobileUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +114,8 @@
 				8D7C44242272546800C6609B /* IEX MobileTests */,
 				8D7C442F2272546800C6609B /* IEX MobileUITests */,
 				8D7C440B2272546700C6609B /* Products */,
+				AA6AAA2D94811BE328126025 /* Pods */,
+				DE3CEA759D14F523F307CD22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +132,12 @@
 		8D7C440C2272546700C6609B /* IEX Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				8D7C440D2272546700C6609B /* AppDelegate.swift */,
+				8D7C4440227254E900C6609B /* Supporting Files */,
+				8D7C4441227255A600C6609B /* Storyboards */,
+				8D7C4442227255B900C6609B /* Utilities */,
 				8D7C440F2272546700C6609B /* ViewController.swift */,
-				8D7C44112272546700C6609B /* Main.storyboard */,
-				8D7C44172272546800C6609B /* Assets.xcassets */,
-				8D7C44192272546800C6609B /* LaunchScreen.storyboard */,
-				8D7C441C2272546800C6609B /* Info.plist */,
-				8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */,
+				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
+				8D7C444D227261C800C6609B /* Extensions */,
 			);
 			path = "IEX Mobile";
 			sourceTree = "<group>";
@@ -128,6 +160,70 @@
 			path = "IEX MobileUITests";
 			sourceTree = "<group>";
 		};
+		8D7C4440227254E900C6609B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C440D2272546700C6609B /* AppDelegate.swift */,
+				8D7C44172272546800C6609B /* Assets.xcassets */,
+				8D7C44192272546800C6609B /* LaunchScreen.storyboard */,
+				8D7C441C2272546800C6609B /* Info.plist */,
+				8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8D7C4441227255A600C6609B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C44112272546700C6609B /* Main.storyboard */,
+				8D7C44432272564E00C6609B /* Authentication.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8D7C4442227255B900C6609B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C443E2272549800C6609B /* Storyboard.swift */,
+				8D7C44472272606800C6609B /* Segues.swift */,
+				8D7C4449227260F600C6609B /* Styles.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8D7C444D227261C800C6609B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C444B227261B900C6609B /* ViewController+Loading.swift */,
+				8D7C444E2272635E00C6609B /* UIColor+IEX.swift */,
+				8D7C445022726E6B00C6609B /* UITextField+Text.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA6AAA2D94811BE328126025 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DDBB08A7A8C718B60682EB8 /* Pods-IEX Mobile.debug.xcconfig */,
+				07A5885263EB9693E9269E2D /* Pods-IEX Mobile.release.xcconfig */,
+				7D4D628C33716D69AD05A8D4 /* Pods-IEX MobileTests.debug.xcconfig */,
+				5E48765AD0C86E96D1EC79EA /* Pods-IEX MobileTests.release.xcconfig */,
+				FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */,
+				7E75F37A9DD6AC39EE1AE5DD /* Pods-IEX MobileUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE3CEA759D14F523F307CD22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */,
+				298786589319D5BF7A18C445 /* Pods_IEX_MobileTests.framework */,
+				ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D7C44352272546800C6609B /* Build configuration list for PBXNativeTarget "IEX Mobile" */;
 			buildPhases = (
+				B2B83DDDD67983998E2030CA /* [CP] Check Pods Manifest.lock */,
 				8D7C44062272546700C6609B /* Sources */,
 				8D7C44072272546700C6609B /* Frameworks */,
 				8D7C44082272546700C6609B /* Resources */,
+				F91F5267CB1B756EDB5C2501 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D7C44382272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileTests" */;
 			buildPhases = (
+				4D1ACD572A1C9223D2AF8EE9 /* [CP] Check Pods Manifest.lock */,
 				8D7C441D2272546800C6609B /* Sources */,
 				8D7C441E2272546800C6609B /* Frameworks */,
 				8D7C441F2272546800C6609B /* Resources */,
@@ -170,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D7C443B2272546800C6609B /* Build configuration list for PBXNativeTarget "IEX MobileUITests" */;
 			buildPhases = (
+				D6AFAF567B418C27AE66B2FA /* [CP] Check Pods Manifest.lock */,
 				8D7C44282272546800C6609B /* Sources */,
 				8D7C44292272546800C6609B /* Frameworks */,
 				8D7C442A2272546800C6609B /* Resources */,
@@ -232,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7C44442272564E00C6609B /* Authentication.storyboard in Resources */,
 				8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */,
 				8D7C44182272546800C6609B /* Assets.xcassets in Resources */,
 				8D7C44132272546700C6609B /* Main.storyboard in Resources */,
@@ -254,14 +355,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D1ACD572A1C9223D2AF8EE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IEX MobileTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B83DDDD67983998E2030CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IEX Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6AFAF567B418C27AE66B2FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IEX MobileUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F91F5267CB1B756EDB5C2501 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IEX Mobile/Pods-IEX Mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IEX Mobile/Pods-IEX Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D7C44062272546700C6609B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7C443F2272549800C6609B /* Storyboard.swift in Sources */,
+				8D7C444A227260F600C6609B /* Styles.swift in Sources */,
+				8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */,
+				8D7C44482272606800C6609B /* Segues.swift in Sources */,
+				8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */,
 				8D7C44102272546700C6609B /* ViewController.swift in Sources */,
+				8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */,
 				8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */,
 				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
+				8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,11 +635,13 @@
 		};
 		8D7C44362272546800C6609B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDBB08A7A8C718B60682EB8 /* Pods-IEX Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD674EGM5X;
-				INFOPLIST_FILE = "IEX Mobile/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IEX Mobile/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,11 +655,13 @@
 		};
 		8D7C44372272546800C6609B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07A5885263EB9693E9269E2D /* Pods-IEX Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KD674EGM5X;
-				INFOPLIST_FILE = "IEX Mobile/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IEX Mobile/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +675,7 @@
 		};
 		8D7C44392272546800C6609B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D4D628C33716D69AD05A8D4 /* Pods-IEX MobileTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +697,7 @@
 		};
 		8D7C443A2272546800C6609B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E48765AD0C86E96D1EC79EA /* Pods-IEX MobileTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +719,7 @@
 		};
 		8D7C443C2272546800C6609B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +740,7 @@
 		};
 		8D7C443D2272546800C6609B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E75F37A9DD6AC39EE1AE5DD /* Pods-IEX MobileUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

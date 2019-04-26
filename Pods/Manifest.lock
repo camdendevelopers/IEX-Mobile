@@ -1,0 +1,22 @@
+PODS:
+  - BulletinBoard (3.0.0)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
+
+DEPENDENCIES:
+  - BulletinBoard
+  - NVActivityIndicatorView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BulletinBoard
+    - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  BulletinBoard: 927f4f9fd22503ceecd71bfc830fd65d5996593a
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
+
+PODFILE CHECKSUM: 31532bb703891ca6dbeb5851df4e7ca7834d01cc
+
+COCOAPODS: 1.6.0
