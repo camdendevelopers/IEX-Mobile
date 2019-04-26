@@ -25,6 +25,8 @@
 		8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444B227261B900C6609B /* ViewController+Loading.swift */; };
 		8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444E2272635E00C6609B /* UIColor+IEX.swift */; };
 		8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C445022726E6B00C6609B /* UITextField+Text.swift */; };
+		8DFF1F3322729333005B807A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F3222729333005B807A /* Constants.swift */; };
+		8DFF1F372272A5CF005B807A /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F362272A5CF005B807A /* KeychainService.swift */; };
 		FD7DC1E2154628AAACFC634A /* Pods_IEX_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		8D7C444B227261B900C6609B /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
 		8D7C444E2272635E00C6609B /* UIColor+IEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IEX.swift"; sourceTree = "<group>"; };
 		8D7C445022726E6B00C6609B /* UITextField+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Text.swift"; sourceTree = "<group>"; };
+		8DFF1F3222729333005B807A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DFF1F362272A5CF005B807A /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,9 +139,9 @@
 				8D7C4440227254E900C6609B /* Supporting Files */,
 				8D7C4441227255A600C6609B /* Storyboards */,
 				8D7C4442227255B900C6609B /* Utilities */,
+				8D7C444D227261C800C6609B /* Extensions */,
 				8D7C440F2272546700C6609B /* ViewController.swift */,
 				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
-				8D7C444D227261C800C6609B /* Extensions */,
 			);
 			path = "IEX Mobile";
 			sourceTree = "<group>";
@@ -187,6 +191,8 @@
 				8D7C443E2272549800C6609B /* Storyboard.swift */,
 				8D7C44472272606800C6609B /* Segues.swift */,
 				8D7C4449227260F600C6609B /* Styles.swift */,
+				8DFF1F3222729333005B807A /* Constants.swift */,
+				8DFF1F362272A5CF005B807A /* KeychainService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -458,9 +464,11 @@
 				8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */,
 				8D7C44482272606800C6609B /* Segues.swift in Sources */,
 				8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */,
+				8DFF1F3322729333005B807A /* Constants.swift in Sources */,
 				8D7C44102272546700C6609B /* ViewController.swift in Sources */,
 				8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */,
 				8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */,
+				8DFF1F372272A5CF005B807A /* KeychainService.swift in Sources */,
 				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
 				8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */,
 			);

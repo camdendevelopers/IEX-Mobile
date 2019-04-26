@@ -17,9 +17,15 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        performSegue(withIdentifier: Segues.toAuthentication, sender: nil)
+        checkAuthentication()
     }
 
+    private func checkAuthentication() {
+        guard Constants.hasAuthenticated else {
+            performSegue(withIdentifier: Segues.toAuthentication, sender: nil)
+            return
+        }
+    }
 
 }
 
