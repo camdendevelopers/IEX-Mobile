@@ -1,6 +1,0 @@
-framework module Pods_IEX_MobileTests {
-  umbrella header "Pods-IEX MobileTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
