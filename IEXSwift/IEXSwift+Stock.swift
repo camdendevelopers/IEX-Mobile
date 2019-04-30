@@ -10,6 +10,23 @@ import Foundation
 import Alamofire
 
 extension IEXSwift {
+    func fetchCompanyLogo(ticker: String, completion: @escaping (Result<CompanyLogo>) -> Void) {
+        let token = privateToken ?? publicToken
+        let requestURL = environment.baseURL + String(format: IEXStockEndpoint.logo.path, ticker)
+        let parameters: Parameters = ["token": token]
+        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+            guard let data = response.data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let logo = try decoder.decode(CompanyLogo.self, from: data)
+
+                completion(.success(logo))
+            } catch {
+                completion(.failure(error))
+            }
+        }).resume()
+    }
+
     func fetchCompanyInformation(ticker: String, completion: @escaping (Result<CompanyInformation>) -> Void) {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.company.path, ticker)

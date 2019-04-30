@@ -15,6 +15,7 @@ class CompanySearchViewController: UIViewController {
     var recentSearches: [StockSymbol] = []
     var stocks: [StockSymbol] = []
     var filteredStocks: [StockSymbol] = []
+    let imageCache = NSCache<NSString, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

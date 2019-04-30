@@ -13,6 +13,7 @@ enum IEXStockEndpoint {
     case company
     case advancedStats
     case chart
+    case logo
 
     var path: String {
         switch self {
@@ -24,6 +25,8 @@ enum IEXStockEndpoint {
             return "/stock/%@/advanced-stats"
         case .chart:
             return "/stock/%@/chart/"
+        case .logo:
+            return "/stock/%@/logo"
         }
     }
 }

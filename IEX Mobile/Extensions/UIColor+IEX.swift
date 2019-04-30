@@ -10,6 +10,7 @@ import UIKit
 
 extension UIColor {
     static let coreBlue = UIColor(hex: 0x308CF9)!
+    static let corePink = UIColor(hex: 0xF222AC)!
 }
 
 extension UIColor {

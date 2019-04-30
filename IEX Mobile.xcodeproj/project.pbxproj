@@ -44,6 +44,7 @@
 		8DFF1F5F2277C3A2005B807A /* IEXSwift+Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F5E2277C3A2005B807A /* IEXSwift+Stock.swift */; };
 		8DFF1F612277C404005B807A /* IEXSwift+ReferenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */; };
 		8DFF1F632277EB7C005B807A /* IEXReferenceDataEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */; };
+		8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F64227813C5005B807A /* CompanyLogo.swift */; };
 		FD7DC1E2154628AAACFC634A /* Pods_IEX_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		8DFF1F5E2277C3A2005B807A /* IEXSwift+Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+Stock.swift"; sourceTree = "<group>"; };
 		8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+ReferenceData.swift"; sourceTree = "<group>"; };
 		8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXReferenceDataEndpoint.swift; sourceTree = "<group>"; };
+		8DFF1F64227813C5005B807A /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
 		ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 				8DFF1F4822740A39005B807A /* CompanyAdvancedStatistics.swift */,
 				8DFF1F50227524D6005B807A /* CompanyNewsArticle.swift */,
 				8DFF1F5A22764EB8005B807A /* CompanyChartDataItem.swift */,
+				8DFF1F64227813C5005B807A /* CompanyLogo.swift */,
 			);
 			path = "Service Objects";
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */,
 				8DFF1F432273F4C9005B807A /* IEXEnvironment.swift in Sources */,
 				8DFF1F3322729333005B807A /* Constants.swift in Sources */,
+				8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */,
 				8DFF1F612277C404005B807A /* IEXSwift+ReferenceData.swift in Sources */,
 				8DFF1F47227401FB005B807A /* IEXStockEndpoint.swift in Sources */,
 				8DFF1F51227524D6005B807A /* CompanyNewsArticle.swift in Sources */,

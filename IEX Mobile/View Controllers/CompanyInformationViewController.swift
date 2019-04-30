@@ -83,6 +83,7 @@ class CompanyInformationViewController: UIViewController {
 
             self.companyDescriptionStackView.isHidden = false
             self.companyInformationStackView.isHidden = false
+            self.companyDescriptionStackView.setCustomSpacing(0, after: self.tickerLabel)
             self.companyInformation = companyInformation
             self.tickerLabel.text = companyInformation.symbol
             self.nameLabel.text = companyInformation.companyName
@@ -159,7 +160,7 @@ class CompanyInformationViewController: UIViewController {
                 self.newsStackView.isHidden = false
             })
 
-            for articleIndex in 0...min(articles.count, 2) {
+            for articleIndex in 0..<min(articles.count, 2) {
                 let newsView = NewsArticleView()
                 newsView.delegate = self
                 let article = articles[articleIndex]
@@ -211,7 +212,7 @@ class CompanyInformationViewController: UIViewController {
             dataSet.drawValuesEnabled = false
             dataSet.highlightEnabled = true
             dataSet.drawCircleHoleEnabled = false
-            dataSet.lineWidth = 2
+            dataSet.lineWidth = 1
 
             self.chartView.data = LineChartData(dataSet: dataSet)
             self.chartView.animate(xAxisDuration: 1.5, easingOption: .easeInOutBack)

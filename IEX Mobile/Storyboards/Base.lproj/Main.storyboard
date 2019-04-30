@@ -594,17 +594,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Apple Computer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cel-ym-bZr">
-                                                    <rect key="frame" x="20" y="12" width="125.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="13.5" width="112" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="AAPL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cb8-je-Tfm">
-                                                    <rect key="frame" x="20" y="35.5" width="31" height="14.5"/>
+                                                    <rect key="frame" x="20" y="34" width="33" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -632,15 +632,32 @@
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="-536.38392857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="xB9-hO-hE3">
+            <objects>
+                <viewController id="9fx-Kh-hu8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q3d-Bl-Lcc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="lOa-hI-PKu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8yS-of-uZm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pas-ou-jtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="161"/>
+        </scene>
         <!--Company-->
         <scene sceneID="syQ-EL-SNx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f8d-m6-YQM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Company" id="pku-9V-F1k"/>
+                    <tabBarItem key="tabBarItem" title="Company" image="stock-icon-empty" selectedImage="stock-icon-filled" id="pku-9V-F1k"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GTu-Mq-1c6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.89676636460000003" green="0.32765918970000002" blue="0.7137530446" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -660,14 +677,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.89676636457443237" green="0.32765918970108032" blue="0.71375304460525513" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="f8d-m6-YQM" kind="relationship" relationship="viewControllers" id="AdZ-UZ-AFd"/>
+                        <segue destination="pnI-18-ExT" kind="relationship" relationship="viewControllers" id="T0b-Mh-fFA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ka-zX-CwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182.60869565217394" y="-536.38392857142856"/>
+            <point key="canvasLocation" x="-96" y="-249"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="KTS-aL-9AE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pnI-18-ExT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="account-icon-empty" selectedImage="account-icon-filled" id="cY0-au-SSD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8RE-FM-wB6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9fx-Kh-hu8" kind="relationship" relationship="rootViewController" id="btp-3w-Cbo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyd-nX-jp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="987" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="account-icon-empty" width="25" height="25"/>
+        <image name="account-icon-filled" width="25" height="25"/>
+        <image name="stock-icon-empty" width="25" height="25"/>
+        <image name="stock-icon-filled" width="25" height="25"/>
+    </resources>
 </document>
