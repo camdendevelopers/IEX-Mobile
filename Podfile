@@ -8,6 +8,9 @@ target 'IEX Mobile' do
   # Pods for IEX Mobile
   pod 'BulletinBoard'
   pod 'NVActivityIndicatorView'
+  pod 'Alamofire'
+  pod 'SwiftDate'
+  pod 'Charts'
 
   target 'IEX MobileTests' do
     inherit! :search_paths

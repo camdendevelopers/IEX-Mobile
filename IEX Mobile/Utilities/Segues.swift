@@ -10,4 +10,6 @@ import Foundation
 
 enum Segues {
     static let toAuthentication = "toAuthenticationSegue"
+    static let toCompanyInformation = "toCompanyInformationSegue"
+    static let toApplication = "toApplicationSegue"
 }

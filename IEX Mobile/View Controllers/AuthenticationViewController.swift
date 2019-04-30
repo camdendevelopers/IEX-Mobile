@@ -11,7 +11,6 @@ import UIKit
 import SafariServices
 
 class AuthenticationViewController: UIViewController {
-    @IBOutlet var closeButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authenticateButton: UIButton!
     @IBOutlet var publicTokenTextField: UITextField!
@@ -50,8 +49,6 @@ class AuthenticationViewController: UIViewController {
     }
 
     private func setupButtons() {
-        closeButton.layer.cornerRadius = closeButton.frame.height / 2
-        closeButton.isHidden = !Constants.hasTokens
         authenticateButton.layer.cornerRadius = Styles.actionButtonCornerRadius
         confirmationButton.layer.cornerRadius = Styles.actionButtonCornerRadius
     }
@@ -59,10 +56,6 @@ class AuthenticationViewController: UIViewController {
     private func setupTextFields() {
         publicTokenTextField.delegate = self
         privateTokenTextField.delegate = self
-    }
-
-    @IBAction func closeButtonPressed() {
-        dismiss(animated: true)
     }
 
     @IBAction func createAccountButtonPressed() {
@@ -106,16 +99,18 @@ class AuthenticationViewController: UIViewController {
 
             if !publicToken.isEmpty {
                 KeychainService.shared[Constants.publicTokenKey] = publicToken
+                IEXSwift.shared.publicToken = publicToken
             }
 
             if !privateToken.isEmpty {
                 KeychainService.shared[Constants.privateTokenKey] = privateToken
+                IEXSwift.shared.privateToken = privateToken
             }
 
             Constants.hasAuthenticated = true
             Constants.hasEnrolledInBiometrics = true
 
-            self.dismiss(animated: true)
+            self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
         }
     }
 
@@ -147,7 +142,12 @@ class AuthenticationViewController: UIViewController {
             }
 
             Constants.hasAuthenticated = true
-            self.dismiss(animated: true)
+            IEXSwift.shared.publicToken = KeychainService.shared[Constants.publicTokenKey] ?? ""
+            IEXSwift.shared.privateToken = KeychainService.shared[Constants.privateTokenKey]
+
+            DispatchQueue.main.sync {
+                self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
+            }
         }
     }
 }
