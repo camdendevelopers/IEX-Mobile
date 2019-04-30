@@ -188,6 +188,23 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9fA-fD-6hc">
+                                                        <rect key="frame" x="0.0" y="24.5" width="382" height="0.0"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 25, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwo-f5-ZIW">
+                                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="0.0"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$56.90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zov-PD-Zmg">
+                                                                <rect key="frame" x="323.5" y="0.0" width="58.5" height="0.0"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXG-cY-Wh3" customClass="LineChartView" customModule="Charts">
                                                         <rect key="frame" x="0.0" y="28.5" width="382" height="250"/>
                                                         <subviews>
@@ -528,6 +545,9 @@
                         <outlet property="averageVolumeLabel" destination="2rL-hZ-XS9" id="0oN-Zy-dmW"/>
                         <outlet property="betaLabel" destination="kqY-2E-vFc" id="KxU-Ul-Foe"/>
                         <outlet property="ceoNameLabel" destination="Z2i-FU-YAG" id="Rsb-xL-C35"/>
+                        <outlet property="chartDataStackView" destination="9fA-fD-6hc" id="1JU-3T-g2L"/>
+                        <outlet property="chartEntryDateLabel" destination="Kwo-f5-ZIW" id="crf-xX-DVg"/>
+                        <outlet property="chartEntryPriceLabel" destination="Zov-PD-Zmg" id="7kG-F3-3w5"/>
                         <outlet property="chartInformationLabel" destination="GRd-mq-70c" id="jNx-Gq-gaA"/>
                         <outlet property="chartLoadingContent" destination="TnV-fY-axO" id="Z0U-np-Rrq"/>
                         <outlet property="chartRangeSegmentedControl" destination="46U-K1-RPL" id="VNz-26-vAz"/>

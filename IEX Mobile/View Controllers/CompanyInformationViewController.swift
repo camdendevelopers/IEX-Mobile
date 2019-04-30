@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import Charts
 
-class CompanyInformationViewController: UIViewController, ChartViewDelegate {
+class CompanyInformationViewController: UIViewController {
     @IBOutlet var tickerLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -31,6 +31,9 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var chartRangeSegmentedControl: UISegmentedControl!
     @IBOutlet var chartView: LineChartView!
     @IBOutlet var chartInformationLabel: UILabel!
+    @IBOutlet var chartDataStackView: UIStackView!
+    @IBOutlet var chartEntryDateLabel: UILabel!
+    @IBOutlet var chartEntryPriceLabel: UILabel!
 
     @IBOutlet var companyDescriptionStackView: UIStackView!
     @IBOutlet var companyInformationStackView: UIStackView!
@@ -41,6 +44,13 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
     var companyTicker: String = ""
     var chartRange: IEXChartRange = .ytd
     var companyInformation: CompanyInformation?
+    var companyChartDataEntries: [CompanyChartDataItem] = []
+    lazy var formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,21 +63,13 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
 
     private func setupChart() {
         chartView.delegate = self
-        chartView.setScaleEnabled(true)
-        chartView.pinchZoomEnabled = false
         chartView.legend.enabled = false
         chartView.backgroundColor = .clear
         chartView.rightAxis.enabled = false
         chartView.leftAxis.enabled = false
+        chartView.xAxis.enabled = false
         chartView.noDataText = ""
-        chartView.xAxis.centerAxisLabelsEnabled = true
-        chartView.drawMarkers = true
-
-        let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bottomInside
-        xAxis.drawAxisLineEnabled = false
-        xAxis.drawGridLinesEnabled = false
-        xAxis.centerAxisLabelsEnabled = true
+        chartView.extraTopOffset = 20
     }
 
     private func fetchCompanyInformation() {
@@ -169,6 +171,7 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
 
     func fetchChartData() {
         self.chartView.data = nil
+        self.chartView.highlightValues(nil)
         self.chartLoadingContent.isHidden = false
 
         IEXSwift.shared.fetchChart(ticker: companyTicker, range: chartRange) { result in
@@ -193,10 +196,8 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
             self.chartView.isHidden = false
             self.chartLoadingContent.isHidden = true
             self.chartRangeSegmentedControl.isHidden = false
-            self.chartView.xAxis.valueFormatter = IEXDateValueFormatter(with: dataPoints)
-            self.chartView.xAxis.setLabelCount(dataPoints.count, force: true)
-            self.chartView.resetViewPortOffsets()
-            self.chartView.resetZoom()
+            self.companyChartDataEntries = dataPoints
+            self.chartView.notifyDataSetChanged()
 
             var entries: [ChartDataEntry] = []
             for (index, point) in dataPoints.enumerated() {
@@ -208,10 +209,12 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
             dataSet.setColor(.coreBlue)
             dataSet.drawCirclesEnabled = false
             dataSet.drawValuesEnabled = false
+            dataSet.highlightEnabled = true
             dataSet.drawCircleHoleEnabled = false
-            dataSet.drawHorizontalHighlightIndicatorEnabled = false
+            dataSet.lineWidth = 2
 
             self.chartView.data = LineChartData(dataSet: dataSet)
+            self.chartView.animate(xAxisDuration: 1.5, easingOption: .easeInOutBack)
         }
     }
 
@@ -240,7 +243,21 @@ class CompanyInformationViewController: UIViewController, ChartViewDelegate {
         guard let website = companyInformation?.website, !website.isEmpty else { return }
         guard let url = URL(string: website) else { return }
         present(SFSafariViewController(url: url), animated: true)
-        
+    }
+}
+
+extension CompanyInformationViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        UIView.animate(withDuration: 0.5) { self.chartDataStackView.isHidden = false }
+
+        chartEntryPriceLabel.text = formatter.string(from: NSNumber(value: entry.y))
+
+        guard let index = chartView.data?.dataSets.first?.entryIndex(entry: entry) else {
+            chartEntryDateLabel.alpha = 0
+            return
+        }
+        chartEntryDateLabel.alpha = 1
+        chartEntryDateLabel.text = companyChartDataEntries[index].label
     }
 }
 
