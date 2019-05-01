@@ -31,14 +31,13 @@ class TokensTableViewController: UITableViewController {
     }
 
     private func saveTextFields() {
-        if let publicToken = livePublicTokenTextField.text, !publicToken.isEmpty {
-            KeychainService.shared[Constants.publicTokenKey] = publicToken
-            IEXSwift.shared.publicToken = publicToken
-        }
+        let publicToken = livePublicTokenTextField.text ?? ""
+        let privateToken = livePrivateTokenTextField.text ?? ""
 
-        if let privateToken = livePrivateTokenTextField.text, !privateToken.isEmpty {
-            KeychainService.shared[Constants.privateTokenKey] = privateToken
-            IEXSwift.shared.privateToken = privateToken
-        }
+        KeychainService.shared[Constants.publicTokenKey] = publicToken
+        IEXSwift.shared.publicToken = publicToken
+
+        KeychainService.shared[Constants.privateTokenKey] = privateToken
+        IEXSwift.shared.privateToken = privateToken
     }
 }

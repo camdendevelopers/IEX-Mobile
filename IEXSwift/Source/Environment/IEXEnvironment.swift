@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum IEXEnvironment {
+enum IEXEnvironment: CaseIterable {
     case v1
     case beta
     case testing
@@ -30,6 +30,17 @@ enum IEXEnvironment {
             return "/beta"
         case .testing:
             return "/latest"
+        }
+    }
+
+    var display: String {
+        switch self {
+        case .v1:
+            return "Version 1"
+        case .beta:
+            return "Beta"
+        case .testing:
+            return "Test"
         }
     }
 

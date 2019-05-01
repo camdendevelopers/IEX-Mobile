@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		17B93F88A417D34CE0A10AB5 /* Pods_IEX_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */; };
 		398D917F930C28F597E1BB14 /* Pods_IEX_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298786589319D5BF7A18C445 /* Pods_IEX_MobileTests.framework */; };
+		8D5FF94D2279CECF00938CED /* IEXSwift+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF94C2279CECF00938CED /* IEXSwift+Account.swift */; };
+		8D5FF94F2279CF1200938CED /* AccountMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF94E2279CF1200938CED /* AccountMetadata.swift */; };
+		8D5FF9512279D07100938CED /* IEXAccountEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */; };
+		8D5FF9532279D63B00938CED /* EnvironmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF9522279D63B00938CED /* EnvironmentTableViewController.swift */; };
 		8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C440D2272546700C6609B /* AppDelegate.swift */; };
 		8D7C44132272546700C6609B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7C44112272546700C6609B /* Main.storyboard */; };
 		8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C44142272546700C6609B /* IEX_Mobile.xcdatamodeld */; };
@@ -78,6 +82,10 @@
 		611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4D628C33716D69AD05A8D4 /* Pods-IEX MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileTests/Pods-IEX MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E75F37A9DD6AC39EE1AE5DD /* Pods-IEX MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.release.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D5FF94C2279CECF00938CED /* IEXSwift+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+Account.swift"; sourceTree = "<group>"; };
+		8D5FF94E2279CF1200938CED /* AccountMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMetadata.swift; sourceTree = "<group>"; };
+		8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXAccountEndpoint.swift; sourceTree = "<group>"; };
+		8D5FF9522279D63B00938CED /* EnvironmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTableViewController.swift; sourceTree = "<group>"; };
 		8D7C440A2272546700C6609B /* IEX Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IEX Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7C440D2272546700C6609B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D7C44122272546700C6609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 				8DFF1F50227524D6005B807A /* CompanyNewsArticle.swift */,
 				8DFF1F5A22764EB8005B807A /* CompanyChartDataItem.swift */,
 				8DFF1F64227813C5005B807A /* CompanyLogo.swift */,
+				8D5FF94E2279CF1200938CED /* AccountMetadata.swift */,
 			);
 			path = "Service Objects";
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
 				8DFF1F6D22788643005B807A /* AccountViewController.swift */,
 				8DFF1F7522796441005B807A /* TokensTableViewController.swift */,
+				8D5FF9522279D63B00938CED /* EnvironmentTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -304,6 +314,7 @@
 				8DFF1F46227401FB005B807A /* IEXStockEndpoint.swift */,
 				8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */,
 				8DFF1F7322795891005B807A /* IEXServiceEndpoint.swift */,
+				8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -344,6 +355,7 @@
 				8DFF1F5E2277C3A2005B807A /* IEXSwift+Stock.swift */,
 				8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */,
 				8DFF1F6F227957F8005B807A /* IEXSwift+Status.swift */,
+				8D5FF94C2279CECF00938CED /* IEXSwift+Account.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -608,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DFF1F412273DC47005B807A /* CompanyInformation.swift in Sources */,
+				8D5FF9532279D63B00938CED /* EnvironmentTableViewController.swift in Sources */,
 				8DFF1F3F2273DAC8005B807A /* IEXSwift.swift in Sources */,
 				8DFF1F4922740A39005B807A /* CompanyAdvancedStatistics.swift in Sources */,
 				8DFF1F5922764E77005B807A /* IEXChartRange.swift in Sources */,
@@ -625,9 +638,11 @@
 				8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */,
 				8DFF1F7422795891005B807A /* IEXServiceEndpoint.swift in Sources */,
 				8DFF1F7622796441005B807A /* TokensTableViewController.swift in Sources */,
+				8D5FF94F2279CF1200938CED /* AccountMetadata.swift in Sources */,
 				8DFF1F612277C404005B807A /* IEXSwift+ReferenceData.swift in Sources */,
 				8DFF1F47227401FB005B807A /* IEXStockEndpoint.swift in Sources */,
 				8DFF1F51227524D6005B807A /* CompanyNewsArticle.swift in Sources */,
+				8D5FF9512279D07100938CED /* IEXAccountEndpoint.swift in Sources */,
 				8DFF1F632277EB7C005B807A /* IEXReferenceDataEndpoint.swift in Sources */,
 				8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */,
 				8DFF1F4C22751D38005B807A /* NewsArticleView.swift in Sources */,
@@ -638,6 +653,7 @@
 				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
 				8DFF1F6E22788643005B807A /* AccountViewController.swift in Sources */,
 				8DFF1F70227957F8005B807A /* IEXSwift+Status.swift in Sources */,
+				8D5FF94D2279CECF00938CED /* IEXSwift+Account.swift in Sources */,
 				8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */,
 				8DFF1F3D22735FFD005B807A /* CompanyInformationViewController.swift in Sources */,
 				8DFF1F5F2277C3A2005B807A /* IEXSwift+Stock.swift in Sources */,

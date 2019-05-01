@@ -13,10 +13,14 @@ class AccountViewController: UITableViewController {
     @IBOutlet var serviceStatusLabel: UILabel!
     @IBOutlet var informationHeaderView: UIView!
     @IBOutlet var accountPlanLabel: UILabel!
+    @IBOutlet var environmentLabel: UILabel!
     @IBOutlet var subscriptionTermLabel: UILabel!
     @IBOutlet var usedMessagesLabel: UILabel!
     @IBOutlet var montlyLimitLabel: UILabel!
     @IBOutlet var signoutButton: UIButton!
+
+    var receivedAccountData = false
+    let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
     lazy var bulletinManager: BLTNItemManager = {
         let page = TextFieldBulletinPage(title: "Enter Private Token")
@@ -37,12 +41,14 @@ class AccountViewController: UITableViewController {
         super.viewDidLoad()
         setupHeaderView()
         setupButtons()
-        fetchIEXStatus()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        environmentLabel.text = IEXSwift.shared.environment.display
+        fetchIEXStatus()
+        fetchAccountMetadata()
     }
 
     private func setupHeaderView() {
@@ -63,8 +69,28 @@ class AccountViewController: UITableViewController {
                 return
             }
 
+            self.receivedAccountData = true
             self.serviceStatusLabel.text = status.status.capitalized
             self.serviceStatusLabel.textColor = status.status == "up" ? UIColor.IEX.green : UIColor.IEX.errorRed
+            self.tableView.reloadData()
+        }
+    }
+
+    private func fetchAccountMetadata() {
+        IEXSwift.shared.fetchAccountMetadata { result in
+            guard let metadata = result.value else { return }
+
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 0
+
+            let montlyLimitAmount = formatter.string(from: NSNumber(value: metadata.messageLimit)) ?? ""
+            let messagesUsed = formatter.string(from: NSNumber(value: metadata.messagesUsed)) ?? ""
+
+            self.accountPlanLabel.text = metadata.tierName.capitalized
+            self.subscriptionTermLabel.text = metadata.subscriptionTermType.capitalized
+            self.montlyLimitLabel.text = "Monthly Limit: " + montlyLimitAmount
+            self.usedMessagesLabel.text = "Messaged Used: " + messagesUsed
         }
     }
 
@@ -90,6 +116,7 @@ class AccountViewController: UITableViewController {
     @IBAction func clearRecentSearchesButtonPressed() {
         let emptySearches: [StockSymbol] = []
         UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
+        impactFeedbackGenerator.impactOccurred()
     }
 
     @IBAction func informationBannerTapped() {
@@ -105,7 +132,11 @@ class AccountViewController: UITableViewController {
 
 extension AccountViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return IEXSwift.shared.privateToken == nil ? 1 : 2
+        return IEXSwift.shared.privateToken == nil && !receivedAccountData ? 1 : 2
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
