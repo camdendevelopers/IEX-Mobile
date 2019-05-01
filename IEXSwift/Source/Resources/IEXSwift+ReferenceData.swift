@@ -15,7 +15,16 @@ extension IEXSwift {
         let requestURL = environment.baseURL + IEXReferenceDataEndpoint.symbols.path
         let parameters: Parameters = ["token": token]
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+            
             do {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-d"
@@ -25,7 +34,7 @@ extension IEXSwift {
 
                 completion(.success(stocks))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
         }).resume()
     }

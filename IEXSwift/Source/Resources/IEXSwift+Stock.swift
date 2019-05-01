@@ -14,16 +14,27 @@ extension IEXSwift {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.logo.path, ticker)
         let parameters: Parameters = ["token": token]
+
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+
             do {
                 let decoder = JSONDecoder()
                 let logo = try decoder.decode(CompanyLogo.self, from: data)
 
                 completion(.success(logo))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
+
         }).resume()
     }
 
@@ -31,15 +42,25 @@ extension IEXSwift {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.company.path, ticker)
         let parameters: Parameters = ["token": token]
+
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+
             do {
                 let decoder = JSONDecoder()
                 let companyInformation = try decoder.decode(CompanyInformation.self, from: data)
 
                 completion(.success(companyInformation))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
         }).resume()
     }
@@ -48,15 +69,25 @@ extension IEXSwift {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.advancedStats.path, ticker)
         let parameters: Parameters = ["token": token]
+
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+
             do {
                 let decoder = JSONDecoder()
                 let advancedStats = try decoder.decode(CompanyAdvancedStatistics.self, from: data)
 
                 completion(.success(advancedStats))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
         }).resume()
     }
@@ -65,15 +96,25 @@ extension IEXSwift {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.news.path, ticker)
         let parameters: Parameters = ["token": token]
+
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .millisecondsSince1970
                 let articles = try decoder.decode([CompanyNewsArticle].self, from: data)
                 completion(.success(articles))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
         }).resume()
     }
@@ -82,8 +123,18 @@ extension IEXSwift {
         let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.chart.path, ticker) + range.query
         let parameters: Parameters = ["token": token]
+        
         Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
-            guard let data = response.data else { return }
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+            
             do {
                 let decoder = JSONDecoder()
                 let formatter = DateFormatter()
@@ -92,7 +143,7 @@ extension IEXSwift {
                 let dataItems = try decoder.decode([CompanyChartDataItem].self, from: data)
                 completion(.success(dataItems))
             } catch {
-                completion(.failure(error))
+                completion(.failure(IEXError.corruptedData))
             }
         }).resume()
     }

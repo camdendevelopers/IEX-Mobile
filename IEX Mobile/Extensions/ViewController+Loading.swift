@@ -22,7 +22,7 @@ extension UIViewController {
         let indicator = NVActivityIndicatorView(
             frame: CGRect(x: (view.frame.width - 60) / 2, y: (view.frame.height - 60) / 2, width: 60, height: 60),
             type: .ballScaleRippleMultiple,
-            color: .coreBlue,
+            color: UIColor.IEX.main,
             padding: 0)
 
         indicator.tag = loadingIndicatorTag

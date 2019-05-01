@@ -31,7 +31,6 @@
 		8DFF1F3F2273DAC8005B807A /* IEXSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */; };
 		8DFF1F412273DC47005B807A /* CompanyInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F402273DC47005B807A /* CompanyInformation.swift */; };
 		8DFF1F432273F4C9005B807A /* IEXEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F422273F4C9005B807A /* IEXEnvironment.swift */; };
-		8DFF1F4522740157005B807A /* IEXSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F4422740157005B807A /* IEXSource.swift */; };
 		8DFF1F47227401FB005B807A /* IEXStockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F46227401FB005B807A /* IEXStockEndpoint.swift */; };
 		8DFF1F4922740A39005B807A /* CompanyAdvancedStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F4822740A39005B807A /* CompanyAdvancedStatistics.swift */; };
 		8DFF1F4C22751D38005B807A /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F4B22751D38005B807A /* NewsArticleView.swift */; };
@@ -45,6 +44,12 @@
 		8DFF1F612277C404005B807A /* IEXSwift+ReferenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */; };
 		8DFF1F632277EB7C005B807A /* IEXReferenceDataEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */; };
 		8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F64227813C5005B807A /* CompanyLogo.swift */; };
+		8DFF1F6C22787F82005B807A /* IEXError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F6B22787F82005B807A /* IEXError.swift */; };
+		8DFF1F6E22788643005B807A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F6D22788643005B807A /* AccountViewController.swift */; };
+		8DFF1F70227957F8005B807A /* IEXSwift+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F6F227957F8005B807A /* IEXSwift+Status.swift */; };
+		8DFF1F722279582B005B807A /* IEXServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F712279582B005B807A /* IEXServiceStatus.swift */; };
+		8DFF1F7422795891005B807A /* IEXServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F7322795891005B807A /* IEXServiceEndpoint.swift */; };
+		8DFF1F7622796441005B807A /* TokensTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F7522796441005B807A /* TokensTableViewController.swift */; };
 		FD7DC1E2154628AAACFC634A /* Pods_IEX_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +106,6 @@
 		8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXSwift.swift; sourceTree = "<group>"; };
 		8DFF1F402273DC47005B807A /* CompanyInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInformation.swift; sourceTree = "<group>"; };
 		8DFF1F422273F4C9005B807A /* IEXEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXEnvironment.swift; sourceTree = "<group>"; };
-		8DFF1F4422740157005B807A /* IEXSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXSource.swift; sourceTree = "<group>"; };
 		8DFF1F46227401FB005B807A /* IEXStockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXStockEndpoint.swift; sourceTree = "<group>"; };
 		8DFF1F4822740A39005B807A /* CompanyAdvancedStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAdvancedStatistics.swift; sourceTree = "<group>"; };
 		8DFF1F4B22751D38005B807A /* NewsArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,12 @@
 		8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+ReferenceData.swift"; sourceTree = "<group>"; };
 		8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXReferenceDataEndpoint.swift; sourceTree = "<group>"; };
 		8DFF1F64227813C5005B807A /* CompanyLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogo.swift; sourceTree = "<group>"; };
+		8DFF1F6B22787F82005B807A /* IEXError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXError.swift; sourceTree = "<group>"; };
+		8DFF1F6D22788643005B807A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		8DFF1F6F227957F8005B807A /* IEXSwift+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+Status.swift"; sourceTree = "<group>"; };
+		8DFF1F712279582B005B807A /* IEXServiceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXServiceStatus.swift; sourceTree = "<group>"; };
+		8DFF1F7322795891005B807A /* IEXServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXServiceEndpoint.swift; sourceTree = "<group>"; };
+		8DFF1F7522796441005B807A /* TokensTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensTableViewController.swift; sourceTree = "<group>"; };
 		ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB8AA15639B5EEF38AE9A09 /* Pods-IEX MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +275,8 @@
 				8DFF1F5222763416005B807A /* CompanySearchViewController.swift */,
 				8DFF1F3C22735FFD005B807A /* CompanyInformationViewController.swift */,
 				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
+				8DFF1F6D22788643005B807A /* AccountViewController.swift */,
+				8DFF1F7522796441005B807A /* TokensTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -272,14 +284,7 @@
 		8DFF1F4A22751CD0005B807A /* IEXSwift */ = {
 			isa = PBXGroup;
 			children = (
-				8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */,
-				8DFF1F5E2277C3A2005B807A /* IEXSwift+Stock.swift */,
-				8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */,
-				8DFF1F5822764E77005B807A /* IEXChartRange.swift */,
-				8DFF1F422273F4C9005B807A /* IEXEnvironment.swift */,
-				8DFF1F4422740157005B807A /* IEXSource.swift */,
-				8DFF1F46227401FB005B807A /* IEXStockEndpoint.swift */,
-				8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */,
+				8DFF1F6722781870005B807A /* Source */,
 			);
 			path = IEXSwift;
 			sourceTree = "<group>";
@@ -291,6 +296,56 @@
 				8DFF1F4E22751D65005B807A /* NewsArticleView.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		8DFF1F662278184B005B807A /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F46227401FB005B807A /* IEXStockEndpoint.swift */,
+				8DFF1F622277EB7C005B807A /* IEXReferenceDataEndpoint.swift */,
+				8DFF1F7322795891005B807A /* IEXServiceEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		8DFF1F6722781870005B807A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F68227818D3005B807A /* Support */,
+				8DFF1F69227818E3005B807A /* Environment */,
+				8DFF1F662278184B005B807A /* Endpoints */,
+				8DFF1F6A2278191D005B807A /* Resources */,
+				8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		8DFF1F68227818D3005B807A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F712279582B005B807A /* IEXServiceStatus.swift */,
+				8DFF1F5822764E77005B807A /* IEXChartRange.swift */,
+				8DFF1F6B22787F82005B807A /* IEXError.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		8DFF1F69227818E3005B807A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F422273F4C9005B807A /* IEXEnvironment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		8DFF1F6A2278191D005B807A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F5E2277C3A2005B807A /* IEXSwift+Stock.swift */,
+				8DFF1F602277C404005B807A /* IEXSwift+ReferenceData.swift */,
+				8DFF1F6F227957F8005B807A /* IEXSwift+Status.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AA6AAA2D94811BE328126025 /* Pods */ = {
@@ -564,9 +619,12 @@
 				8DFF1F3922734993005B807A /* StockSymbol.swift in Sources */,
 				8DFF1F5522763C6E005B807A /* IEXMobileUtilities.swift in Sources */,
 				8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */,
+				8DFF1F722279582B005B807A /* IEXServiceStatus.swift in Sources */,
 				8DFF1F432273F4C9005B807A /* IEXEnvironment.swift in Sources */,
 				8DFF1F3322729333005B807A /* Constants.swift in Sources */,
 				8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */,
+				8DFF1F7422795891005B807A /* IEXServiceEndpoint.swift in Sources */,
+				8DFF1F7622796441005B807A /* TokensTableViewController.swift in Sources */,
 				8DFF1F612277C404005B807A /* IEXSwift+ReferenceData.swift in Sources */,
 				8DFF1F47227401FB005B807A /* IEXStockEndpoint.swift in Sources */,
 				8DFF1F51227524D6005B807A /* CompanyNewsArticle.swift in Sources */,
@@ -574,10 +632,12 @@
 				8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */,
 				8DFF1F4C22751D38005B807A /* NewsArticleView.swift in Sources */,
 				8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */,
-				8DFF1F4522740157005B807A /* IEXSource.swift in Sources */,
+				8DFF1F6C22787F82005B807A /* IEXError.swift in Sources */,
 				8DFF1F5B22764EB8005B807A /* CompanyChartDataItem.swift in Sources */,
 				8DFF1F372272A5CF005B807A /* KeychainService.swift in Sources */,
 				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
+				8DFF1F6E22788643005B807A /* AccountViewController.swift in Sources */,
+				8DFF1F70227957F8005B807A /* IEXSwift+Status.swift in Sources */,
 				8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */,
 				8DFF1F3D22735FFD005B807A /* CompanyInformationViewController.swift in Sources */,
 				8DFF1F5F2277C3A2005B807A /* IEXSwift+Stock.swift in Sources */,

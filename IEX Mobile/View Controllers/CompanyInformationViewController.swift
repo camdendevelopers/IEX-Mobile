@@ -11,7 +11,7 @@ import SafariServices
 import Charts
 
 class CompanyInformationViewController: UIViewController {
-    @IBOutlet var tickerLabel: UILabel!
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var ceoNameLabel: UILabel!
@@ -35,6 +35,7 @@ class CompanyInformationViewController: UIViewController {
     @IBOutlet var chartEntryDateLabel: UILabel!
     @IBOutlet var chartEntryPriceLabel: UILabel!
 
+    @IBOutlet var companyDescriptionActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var companyDescriptionStackView: UIStackView!
     @IBOutlet var companyInformationStackView: UIStackView!
     @IBOutlet var advancedStatsStackView: UIStackView!
@@ -54,6 +55,7 @@ class CompanyInformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupScrollView()
         setupChart()
         fetchCompanyInformation()
         fetchAdvancedStatistics()
@@ -61,15 +63,18 @@ class CompanyInformationViewController: UIViewController {
         fetchChartData()
     }
 
+    private func setupScrollView() {
+        scrollView.delegate = self
+    }
+
     private func setupChart() {
         chartView.delegate = self
         chartView.legend.enabled = false
-        chartView.backgroundColor = .clear
         chartView.rightAxis.enabled = false
         chartView.leftAxis.enabled = false
         chartView.xAxis.enabled = false
         chartView.noDataText = ""
-        chartView.extraTopOffset = 20
+        chartView.extraTopOffset = 10
     }
 
     private func fetchCompanyInformation() {
@@ -81,11 +86,13 @@ class CompanyInformationViewController: UIViewController {
 
             guard let companyInformation = result.value else { return }
 
-            self.companyDescriptionStackView.isHidden = false
-            self.companyInformationStackView.isHidden = false
-            self.companyDescriptionStackView.setCustomSpacing(0, after: self.tickerLabel)
+            UIView.animate(withDuration: 0.35, animations: {
+                self.companyDescriptionActivityIndicator.alpha = 0
+                self.companyDescriptionActivityIndicator.isHidden = true
+                self.companyDescriptionStackView.isHidden = false
+            })
+
             self.companyInformation = companyInformation
-            self.tickerLabel.text = companyInformation.symbol
             self.nameLabel.text = companyInformation.companyName
             self.descriptionLabel.text = companyInformation.description
             self.ceoNameLabel.text = companyInformation.CEO
@@ -207,11 +214,13 @@ class CompanyInformationViewController: UIViewController {
             }
 
             let dataSet = LineChartDataSet(values: entries, label: nil)
-            dataSet.setColor(.coreBlue)
+            dataSet.setColor(UIColor.IEX.main)
             dataSet.drawCirclesEnabled = false
             dataSet.drawValuesEnabled = false
             dataSet.highlightEnabled = true
             dataSet.drawCircleHoleEnabled = false
+            dataSet.drawHorizontalHighlightIndicatorEnabled = false
+            dataSet.highlightColor = UIColor.IEX.blue
             dataSet.lineWidth = 1
 
             self.chartView.data = LineChartData(dataSet: dataSet)
@@ -262,24 +271,14 @@ extension CompanyInformationViewController: ChartViewDelegate {
     }
 }
 
-extension CompanyInformationViewController: NewsArticleViewDelegate {
-    func tapped(with url: URL) {
-        present(SFSafariViewController(url: url), animated: true)
+extension CompanyInformationViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        chartView.highlightValues(nil)
     }
 }
 
-extension CompanyInformationViewController {
-    class IEXDateValueFormatter: NSObject, IAxisValueFormatter {
-        var companyChartDataItems: [CompanyChartDataItem] = []
-
-        convenience init(with dataItems: [CompanyChartDataItem]) {
-            self.init()
-            companyChartDataItems = dataItems
-        }
-
-        public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-            let index = Int(value) % companyChartDataItems.count
-            return companyChartDataItems[index].label
-        }
+extension CompanyInformationViewController: NewsArticleViewDelegate {
+    func tapped(with url: URL) {
+        present(SFSafariViewController(url: url), animated: true)
     }
 }

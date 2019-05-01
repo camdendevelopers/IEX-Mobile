@@ -60,7 +60,7 @@ class AuthenticationViewController: UIViewController {
 
     @IBAction func createAccountButtonPressed() {
         guard let url = URL(string: Constants.IEXRegisterURL) else { return }
-        present(SFSafariViewController(url: url), animated: true, completion: nil)
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 
     @IBAction func confirmationButtonPressed() {
@@ -72,7 +72,10 @@ class AuthenticationViewController: UIViewController {
             let alert = UIAlertController(title: "Missing Information", message: "You need to enter at least one of the tokens in order to continue.", preferredStyle: .alert)
             let action = UIAlertAction(title: "I understand", style: .default, handler: nil)
             alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
             return
         }
 
@@ -110,7 +113,9 @@ class AuthenticationViewController: UIViewController {
             Constants.hasAuthenticated = true
             Constants.hasEnrolledInBiometrics = true
 
-            self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
+            }
         }
     }
 

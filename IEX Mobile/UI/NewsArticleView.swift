@@ -36,6 +36,7 @@ class NewsArticleView: UIView {
 
     func commonSetup() {
         setupView()
+        applyShadow()
     }
 
     func setupView() {
@@ -59,6 +60,21 @@ class NewsArticleView: UIView {
         guard let data = try? Data(contentsOf: url) else { return }
         let image = UIImage(data: data)
         imageView.image = image
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        applyShadow()
+    }
+
+    private func applyShadow() {
+        imageView.layer.cornerRadius = imageView.frame.height / 2
+        contentView.layer.cornerRadius = Styles.newsItemCornerRadius
+        layer.shadowRadius = 2
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.15
+        layer.shadowOffset = .zero
+        contentView.layer.masksToBounds =  true
     }
 
     @IBAction func articleTapped() {

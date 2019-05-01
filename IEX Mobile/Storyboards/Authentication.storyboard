@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nu6-Ca-cIq">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,52 +14,60 @@
             <objects>
                 <viewController id="tJU-yo-Ld0" customClass="AuthenticationViewController" customModule="IEX_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oym-q7-Tip">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Let's Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-cT-Tmd">
-                                <rect key="frame" x="24" y="60" width="280" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="grW-hq-ZEb">
-                                <rect key="frame" x="16" y="96.5" width="288" height="455.5"/>
+                                <rect key="frame" x="16" y="60" width="382" height="786"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iexCloud-logo-black" translatesAutoresizingMaskIntoConstraints="NO" id="QQa-6d-1eY">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="96"/>
+                                        <color key="tintColor" red="0.031372549019607843" green="0.054901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="30M-XU-b9c"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Let's Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-cT-Tmd">
+                                        <rect key="frame" x="0.0" y="112" width="382" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQO-0q-5Lq">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="455.5"/>
+                                        <rect key="frame" x="0.0" y="159.5" width="382" height="626.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e6y-7P-Qo9">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="232"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="236"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zet-3x-hGk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="288" height="76.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="78.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tP2-eC-WXb">
-                                                                <rect key="frame" x="8" y="8" width="250" height="60.5"/>
+                                                                <rect key="frame" x="8" y="8" width="344" height="62.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Create an Account on IEX Cloud" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-Ny-cZP">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="16"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Create an Account on IEX Cloud" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-Ny-cZP">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="344" height="18"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                        <color key="textColor" red="0.031372549019607843" green="0.054901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need an account to get the public and private tokens that will be used on every data request." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NN3-3M-Pyt">
-                                                                        <rect key="frame" x="0.0" y="21" width="250" height="39.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NN3-3M-Pyt">
+                                                                        <rect key="frame" x="0.0" y="23" width="344" height="39.5"/>
+                                                                        <string key="text">You need an account to get the public and private tokens that will be used on every data request. Tap here to navigate to IEXCloud.com on Safari.</string>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.51764705882352935" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-4x-OQ9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="76.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="78.5"/>
                                                                 <connections>
                                                                     <action selector="createAccountButtonPressed" destination="tJU-yo-Ld0" eventType="touchUpInside" id="iVG-Pe-pA6"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saz-UX-kLo" userLabel="Disclosure Icon">
-                                                                <rect key="frame" x="266" y="28" width="22" height="20.5"/>
+                                                                <rect key="frame" x="360" y="29" width="22" height="20.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="saz-UX-kLo" secondAttribute="height" multiplier="12:11" id="GcK-75-d93"/>
                                                                     <constraint firstAttribute="width" constant="22" id="i7W-rP-oej"/>
@@ -82,34 +90,34 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh8-ux-Ddc">
-                                                        <rect key="frame" x="0.0" y="76.5" width="288" height="155.5"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="382" height="157.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-oc-Ogk">
-                                                                <rect key="frame" x="8" y="8" width="280" height="139.5"/>
+                                                                <rect key="frame" x="8" y="8" width="374" height="141.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Enter your tokens" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI5-St-ZP0">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="16"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Enter your tokens" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI5-St-ZP0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                        <color key="textColor" red="0.031372549019607843" green="0.054901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Public Token" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h0y-z0-IQ2">
-                                                                        <rect key="frame" x="0.0" y="24" width="280" height="30"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <rect key="frame" x="0.0" y="30.5" width="374" height="30"/>
+                                                                        <color key="textColor" red="0.031372549019607843" green="0.054901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                                     </textField>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Private Token (Optional)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Kh-oj-k3G">
-                                                                        <rect key="frame" x="0.0" y="62" width="280" height="30"/>
+                                                                        <rect key="frame" x="0.0" y="72.5" width="374" height="30"/>
                                                                         <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                     </textField>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2Z-yb-fsm">
-                                                                        <rect key="frame" x="0.0" y="100" width="280" height="39.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2Z-yb-fsm">
+                                                                        <rect key="frame" x="0.0" y="115" width="374" height="26.5"/>
                                                                         <string key="text">You'll want to enter your private token if you want access to sensitve information such as usage and settings. You can do this later.</string>
                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="textColor" red="0.50980392156862742" green="0.51764705882352935" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -124,11 +132,12 @@
                                                         </constraints>
                                                     </view>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11B-v7-L7a">
-                                                        <rect key="frame" x="0.0" y="232" width="288" height="45"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="236" width="382" height="45"/>
+                                                        <color key="backgroundColor" red="0.93725490196078431" green="0.0" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="Kbe-e7-RUg"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <state key="normal" title="Accept and Continue">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -147,28 +156,28 @@
                                             <constraint firstAttribute="trailing" secondItem="e6y-7P-Qo9" secondAttribute="trailing" id="kvU-U1-5PM"/>
                                         </constraints>
                                     </scrollView>
-                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mr9-JZ-4ZH">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="61"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mr9-JZ-4ZH">
+                                        <rect key="frame" x="0.0" y="786" width="382" height="61"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Signed In?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-6h-eyH">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="0.0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Signed In?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-6h-eyH">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap below to authenticate your tokens and continue." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-Mz-mJ1">
-                                                <rect key="frame" x="0.0" y="8" width="288" height="0.0"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tap below to authenticate your tokens and continue." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-Mz-mJ1">
+                                                <rect key="frame" x="0.0" y="8" width="382" height="0.0"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG2-fH-WSN">
-                                                <rect key="frame" x="0.0" y="16" width="288" height="45"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="16" width="382" height="45"/>
+                                                <color key="backgroundColor" red="0.93725490196078431" green="0.0" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="cFy-WJ-UeB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <state key="normal" title="Authenticate Tokens">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -183,12 +192,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="grW-hq-ZEb" firstAttribute="top" secondItem="EMC-cT-Tmd" secondAttribute="bottom" constant="16" id="6KK-co-TG0"/>
-                            <constraint firstItem="EMC-cT-Tmd" firstAttribute="top" secondItem="5dy-Yb-YOP" secondAttribute="top" constant="40" id="MKr-yZ-Eh7"/>
+                            <constraint firstItem="grW-hq-ZEb" firstAttribute="top" secondItem="5dy-Yb-YOP" secondAttribute="top" constant="16" id="CGx-V5-02z"/>
                             <constraint firstItem="5dy-Yb-YOP" firstAttribute="bottom" secondItem="grW-hq-ZEb" secondAttribute="bottom" constant="16" id="RYC-eW-WxC"/>
-                            <constraint firstItem="EMC-cT-Tmd" firstAttribute="leading" secondItem="5dy-Yb-YOP" secondAttribute="leading" constant="24" id="gtE-Kp-QqB"/>
                             <constraint firstAttribute="trailing" secondItem="grW-hq-ZEb" secondAttribute="trailing" constant="16" id="j7e-M3-zMh"/>
-                            <constraint firstItem="5dy-Yb-YOP" firstAttribute="trailing" secondItem="EMC-cT-Tmd" secondAttribute="trailing" constant="16" id="nbh-f7-63b"/>
                             <constraint firstItem="grW-hq-ZEb" firstAttribute="leading" secondItem="5dy-Yb-YOP" secondAttribute="leading" constant="16" id="rx5-WT-Pmx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5dy-Yb-YOP"/>
@@ -236,5 +242,6 @@
     </scenes>
     <resources>
         <image name="disclosure-icon" width="9" height="14"/>
+        <image name="iexCloud-logo-black" width="126" height="96"/>
     </resources>
 </document>

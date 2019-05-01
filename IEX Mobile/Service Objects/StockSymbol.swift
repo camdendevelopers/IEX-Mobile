@@ -19,3 +19,9 @@ struct StockSymbol: Codable {
     let isEnabled: Bool
     let date: Date
 }
+
+extension StockSymbol: Equatable {
+    static func == (lhs: StockSymbol, rhs: StockSymbol) -> Bool {
+        return lhs.iexId == rhs.iexId
+    }
+}

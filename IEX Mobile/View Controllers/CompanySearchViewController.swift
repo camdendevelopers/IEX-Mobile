@@ -15,7 +15,6 @@ class CompanySearchViewController: UIViewController {
     var recentSearches: [StockSymbol] = []
     var stocks: [StockSymbol] = []
     var filteredStocks: [StockSymbol] = []
-    let imageCache = NSCache<NSString, UIImage>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +30,14 @@ class CompanySearchViewController: UIViewController {
     }
 
     private func getRecentSearches() {
-        guard let data = UserDefaults.standard.value(forKey: Constants.recentSearchesKey) as? Data else { return }
-        do {
-            recentSearches = try PropertyListDecoder().decode([StockSymbol].self, from: data)
-            tableView.reloadData()
-
-        } catch {
-            print(error)
+        guard let data = UserDefaults.standard.value(forKey: Constants.recentSearchesKey) as? Data else {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(recentSearches), forKey: Constants.recentSearchesKey)
+            return
         }
+
+        guard let searches = try? PropertyListDecoder().decode([StockSymbol].self, from: data) else { return }
+        recentSearches = searches
+        tableView.reloadSections([0], with: .fade)
     }
 
     @objc private func getStocks() {
@@ -47,24 +46,23 @@ class CompanySearchViewController: UIViewController {
 
             guard let stocks = result.value else { return }
             self.stocks = stocks
-            self.tableView.reloadData()
+            self.tableView.reloadSections([1], with: .fade)
             self.refreshControl.endRefreshing()
         }
     }
 
     private func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Apple Inc"
+        searchController.searchBar.placeholder = "Apple, Inc."
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     private func setupTableView() {
-        let title = NSAttributedString(string: "Fetching Available Companies", attributes: [.foregroundColor : UIColor.coreBlue])
         refreshControl.addTarget(self, action: #selector(getStocks), for: .valueChanged)
-        refreshControl.tintColor = .coreBlue
-        refreshControl.attributedTitle = title
+        refreshControl.tintColor = UIColor.IEX.main
         tableView.addSubview(refreshControl)
         tableView.delegate = self
         tableView.dataSource = self
@@ -81,25 +79,32 @@ class CompanySearchViewController: UIViewController {
             guard let stockSymbol = sender as? StockSymbol else { return }
             let companyInformationViewController = segue.destination as? CompanyInformationViewController
             companyInformationViewController?.companyTicker = stockSymbol.symbol
+            companyInformationViewController?.title = stockSymbol.symbol
         }
     }
 }
 
 extension CompanySearchViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return recentSearches.isEmpty ? 1 : 2
+        return 2
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return !recentSearches.isEmpty && section == 0 ? "Recent Searches" : "Available Stocks"
+        return section == 0 ? "Recent Searches" : "Available Companies"
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return !recentSearches.isEmpty ? UITableView.automaticDimension : 0
+        return recentSearches.isEmpty ? 0 : UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as? UITableViewHeaderFooterView
+        header?.textLabel?.textColor = UIColor.IEX.main
+        header?.textLabel?.font = .preferredFont(forTextStyle: .headline)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !recentSearches.isEmpty, section == 0 {
+        if section == 0 {
             return recentSearches.count
         } else {
             return isFiltering ? filteredStocks.count : stocks.count
@@ -110,7 +115,7 @@ extension CompanySearchViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompanySearchResultCell", for: indexPath)
         let stock: StockSymbol
 
-        if !recentSearches.isEmpty, indexPath.section == 0 {
+        if indexPath.section == 0 {
             stock = recentSearches[indexPath.row]
         } else {
             stock = isFiltering ? filteredStocks[indexPath.row] : stocks[indexPath.row]
@@ -127,22 +132,17 @@ extension CompanySearchViewController: UITableViewDelegate, UITableViewDataSourc
         
         let selectedStock: StockSymbol
 
-        if !recentSearches.isEmpty, indexPath.section == 0 {
+        if indexPath.section == 0 {
             selectedStock = recentSearches[indexPath.row]
             
         } else {
             selectedStock = isFiltering ? filteredStocks[indexPath.row] : stocks[indexPath.row]
 
-            do {
-                if let data = UserDefaults.standard.value(forKey: Constants.recentSearchesKey) as? Data {
-                    var recentSearches = try PropertyListDecoder().decode([StockSymbol].self, from: data)
+            if let data = UserDefaults.standard.value(forKey: Constants.recentSearchesKey) as? Data {
+                if var recentSearches = try? PropertyListDecoder().decode([StockSymbol].self, from: data), !recentSearches.contains(selectedStock) {
                     recentSearches.append(selectedStock)
-
                     UserDefaults.standard.set(try? PropertyListEncoder().encode(recentSearches), forKey: Constants.recentSearchesKey)
                 }
-
-            } catch {
-                print(error)
             }
         }
 
@@ -154,8 +154,14 @@ extension CompanySearchViewController: UISearchBarDelegate, UISearchResultsUpdat
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
 
-        filteredStocks = stocks.filter { $0.name.contains(text) || $0.symbol.contains(text) }
 
-        tableView.reloadData()
+
+        DispatchQueue.global(qos: .background).async {
+            self.filteredStocks = self.stocks.filter { $0.name.contains(text) || $0.symbol.contains(text) }
+
+            DispatchQueue.main.async {
+                self.tableView.reloadSections([1], with: .fade)
+            }
+        }
     }
 }

@@ -10,4 +10,5 @@ import UIKit
 
 enum Styles {
     static let actionButtonCornerRadius: CGFloat = 8
+    static let newsItemCornerRadius: CGFloat = 6
 }
