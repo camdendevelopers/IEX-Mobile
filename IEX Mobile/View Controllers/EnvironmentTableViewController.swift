@@ -36,6 +36,15 @@ class EnvironmentTableViewController: UITableViewController {
 
         IEXSwift.shared.environment = environment
 
-        navigationController?.popViewController(animated: true)
+        if environment == .testing && (IEXSwift.shared.testPublicToken == nil || IEXSwift.shared.testPrivateToken == nil) {
+            let alert = UIAlertController(title: "Warning on Selection", message: "You have selected to use the testing environment, but you have not entered testing tokens. Please head over to Add/Modify tokens and update your testing tokens there. You will not be able to make any service calls if these are not entered.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Got it", style: .default, handler: { _ in
+                self.navigationController?.popViewController(animated: true)
+            })
+            alert.addAction(okayAction)
+            present(alert, animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

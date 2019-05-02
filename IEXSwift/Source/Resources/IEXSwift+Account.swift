@@ -12,8 +12,7 @@ import Alamofire
 extension IEXSwift {
     func fetchAccountMetadata(parameters: Parameters = [:], completion: @escaping (Result<AccountMetadata>) -> Void) {
         let requestURL = environment.baseURL + IEXAccountEndpoint.metadata.path
-        let token = privateToken ?? publicToken
-        var finalParameters: Parameters = ["token": token]
+        var finalParameters: Parameters = ["token": serviceToken]
         finalParameters.merge(parameters, uniquingKeysWith: { $1 })
 
         Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
@@ -38,6 +37,19 @@ extension IEXSwift {
                 completion(.success(status))
             } catch {
                 completion(.failure(IEXError.corruptedData))
+            }
+        }).resume()
+    }
+
+    func updatePayAsYouGo(allow: Bool, completion: @escaping (Result<Bool>) -> Void) {
+        let requestURL = environment.baseURL + IEXAccountEndpoint.payAsYouGo.path
+        let finalParameters: Parameters = ["token": serviceToken, "allow": allow]
+
+        Alamofire.request(requestURL, method: .post, parameters: finalParameters).responseData(completionHandler: { response in
+            if response.error != nil {
+                completion(.success(false))
+            } else {
+                completion(.success(true))
             }
         }).resume()
     }

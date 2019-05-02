@@ -28,16 +28,26 @@ class TokensTableViewController: UITableViewController {
     private func setupTextFields() {
         livePublicTokenTextField.text = KeychainService.shared[Constants.publicTokenKey]
         livePrivateTokenTextField.text = KeychainService.shared[Constants.privateTokenKey]
+        testingPublicTokenTextField.text = KeychainService.shared[Constants.testPublicTokenKey]
+        testingPrivateTokenTextField.text = KeychainService.shared[Constants.testPrivateTokenKey]
     }
 
     private func saveTextFields() {
         let publicToken = livePublicTokenTextField.text ?? ""
         let privateToken = livePrivateTokenTextField.text ?? ""
+        let testPublicToken = testingPublicTokenTextField.text ?? ""
+        let testPrivateToken = testingPublicTokenTextField.text ?? ""
 
         KeychainService.shared[Constants.publicTokenKey] = publicToken
         IEXSwift.shared.publicToken = publicToken
 
         KeychainService.shared[Constants.privateTokenKey] = privateToken
         IEXSwift.shared.privateToken = privateToken
+
+        KeychainService.shared[Constants.testPublicTokenKey] = testPublicToken
+        IEXSwift.shared.testPublicToken = testPublicToken
+
+        KeychainService.shared[Constants.testPrivateTokenKey] = testPrivateToken
+        IEXSwift.shared.testPrivateToken = testPrivateToken
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 enum IEXAccountEndpoint {
     case metadata
     case usage
+    case payAsYouGo
 
     var path: String {
         switch self {
@@ -18,6 +19,8 @@ enum IEXAccountEndpoint {
             return "/account/metadata"
         case .usage:
             return "/account/usage"
+        case .payAsYouGo:
+            return "/account/payasyougo"
         }
     }
 }

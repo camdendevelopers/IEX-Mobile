@@ -9,6 +9,7 @@
 import Foundation
 
 struct AccountMetadata: Codable {
+    let payAsYouGoEnabled: Bool?
     let effectiveDate: Date
     let endDateEffective: Date
     let overagesEnabled: Bool

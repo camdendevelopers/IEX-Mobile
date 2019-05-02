@@ -18,6 +18,15 @@ class AccountViewController: UITableViewController {
     @IBOutlet var usedMessagesLabel: UILabel!
     @IBOutlet var montlyLimitLabel: UILabel!
     @IBOutlet var signoutButton: UIButton!
+    @IBOutlet var payAsYouGoSwitch: UISwitch!
+
+    enum AccountCells: Int {
+        case serviceStatus
+        case tokens
+        case environment
+        case recentSearches
+        case deleteTokens
+    }
 
     var receivedAccountData = false
     let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
@@ -66,6 +75,8 @@ class AccountViewController: UITableViewController {
             guard let status = result.value else {
                 self.serviceStatusLabel.text = "Down"
                 self.serviceStatusLabel.textColor = UIColor.IEX.errorRed
+                self.receivedAccountData = false
+                self.tableView.reloadData()
                 return
             }
 
@@ -91,21 +102,9 @@ class AccountViewController: UITableViewController {
             self.subscriptionTermLabel.text = metadata.subscriptionTermType.capitalized
             self.montlyLimitLabel.text = "Monthly Limit: " + montlyLimitAmount
             self.usedMessagesLabel.text = "Messaged Used: " + messagesUsed
+            self.payAsYouGoSwitch.isEnabled = metadata.payAsYouGoEnabled != nil
+            self.payAsYouGoSwitch.isOn = metadata.payAsYouGoEnabled ?? false
         }
-    }
-
-    @IBAction func removeTokensButtonPressed() {
-        let alert = UIAlertController(title: "Are you sure you want to delete all tokens from this device?", message: "Removing your tokens will log you out and you will have to re-enter them next time you open the app.", preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "Delete and Log Out", style: .destructive) { _ in
-            KeychainService.shared[Constants.privateTokenKey] = nil
-            KeychainService.shared[Constants.publicTokenKey] = nil
-            Constants.hasAuthenticated = false
-            self.performSegue(withIdentifier: Segues.toAuthentication, sender: nil)
-        }
-        let cancelAction = UIAlertAction(title: "Nevermind", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        alert.addAction(deleteAction)
-        present(alert, animated: true, completion: nil)
     }
 
     @IBAction func signoutButtonPressed() {
@@ -113,20 +112,16 @@ class AccountViewController: UITableViewController {
         performSegue(withIdentifier: Segues.toAuthentication, sender: nil)
     }
 
-    @IBAction func clearRecentSearchesButtonPressed() {
-        let emptySearches: [StockSymbol] = []
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
-        impactFeedbackGenerator.impactOccurred()
-    }
-
     @IBAction func informationBannerTapped() {
         bulletinManager.backgroundViewStyle = .blurredDark
         bulletinManager.showBulletin(above: self)
     }
 
-    //private func
-
     @IBAction func payAsYouGoSwitchChanged(_ sender: UISwitch) {
+        IEXSwift.shared.updatePayAsYouGo(allow: sender.isOn) { result in
+            guard let isSuccess = result.value else { return }
+            sender.isOn = isSuccess
+        }
     }
 }
 
@@ -137,158 +132,28 @@ extension AccountViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
 
-class SelectionFeedbackGenerator {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
 
-    private let anyObject: AnyObject?
+        if cell.tag == AccountCells.recentSearches.rawValue {
+            let emptySearches: [StockSymbol] = []
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
+            impactFeedbackGenerator.impactOccurred()
 
-    init() {
-
-        if #available(iOS 10, *) {
-            anyObject = UISelectionFeedbackGenerator()
-        } else {
-            anyObject = nil
-        }
-
-    }
-
-    func prepare() {
-
-        if #available(iOS 10, *) {
-            (anyObject as! UISelectionFeedbackGenerator).prepare()
-        }
-
-    }
-
-    func selectionChanged() {
-
-        if #available(iOS 10, *) {
-            (anyObject as! UISelectionFeedbackGenerator).selectionChanged()
-        }
-
-    }
-
-}
-
-/**
- * A 3D Touch success feedback generator wrapper that uses the API only when available.
- */
-
-class SuccessFeedbackGenerator {
-
-    private let anyObject: AnyObject?
-
-    init() {
-
-        if #available(iOS 10, *) {
-            anyObject = UINotificationFeedbackGenerator()
-        } else {
-            anyObject = nil
-        }
-
-    }
-
-    func prepare() {
-
-        if #available(iOS 10, *) {
-            (anyObject as! UINotificationFeedbackGenerator).prepare()
-        }
-
-    }
-
-    func success() {
-
-        if #available(iOS 10, *) {
-            (anyObject as! UINotificationFeedbackGenerator).notificationOccurred(.success)
-        }
-
-    }
-
-}
-
-class FeedbackPageBLTNItem: BLTNPageItem {
-
-    private let feedbackGenerator = SelectionFeedbackGenerator()
-
-    override func actionButtonTapped(sender: UIButton) {
-
-        // Play an haptic feedback
-        feedbackGenerator.prepare()
-        feedbackGenerator.selectionChanged()
-
-        // Call super
-        super.actionButtonTapped(sender: sender)
-
-    }
-
-    override func alternativeButtonTapped(sender: UIButton) {
-
-        // Play an haptic feedback
-        feedbackGenerator.prepare()
-        feedbackGenerator.selectionChanged()
-
-        // Call super
-        super.alternativeButtonTapped(sender: sender)
-
-    }
-
-}
-
-class TextFieldBulletinPage: FeedbackPageBLTNItem {
-
-    @objc public var textField: UITextField!
-
-    @objc public var textInputHandler: ((BLTNActionItem, String?) -> Void)? = nil
-
-    override func makeViewsUnderDescription(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
-        textField = interfaceBuilder.makeTextField(placeholder: "Private Token", returnKey: .done, delegate: self)
-        return [textField]
-    }
-
-    override func tearDown() {
-        super.tearDown()
-        textField?.delegate = nil
-    }
-
-    override func actionButtonTapped(sender: UIButton) {
-        textField.resignFirstResponder()
-        super.actionButtonTapped(sender: sender)
-    }
-
-}
-
-// MARK: - UITextFieldDelegate
-extension TextFieldBulletinPage: UITextFieldDelegate {
-
-    @objc open func isInputValid(text: String?) -> Bool {
-
-        if text == nil || text!.isEmpty {
-            return false
-        }
-
-        return true
-
-    }
-
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-
-        if isInputValid(text: textField.text) {
-            textInputHandler?(self, textField.text)
-        } else {
-            descriptionLabel!.textColor = UIColor.IEX.errorRed
-            descriptionLabel!.text = "You must enter a token to continue"
-            textField.backgroundColor = UIColor.IEX.errorRed.withAlphaComponent(0.3)
+        } else if cell.tag == AccountCells.deleteTokens.rawValue {
+            let alert = UIAlertController(title: "Are you sure you want to delete all tokens from this device?", message: "Removing your tokens will log you out and you will have to re-enter them next time you open the app.", preferredStyle: .actionSheet)
+            let deleteAction = UIAlertAction(title: "Delete and Log Out", style: .destructive) { _ in
+                KeychainService.shared[Constants.privateTokenKey] = nil
+                KeychainService.shared[Constants.publicTokenKey] = nil
+                KeychainService.shared[Constants.testPublicTokenKey] = nil
+                KeychainService.shared[Constants.testPrivateTokenKey] = nil
+                Constants.hasAuthenticated = false
+                self.performSegue(withIdentifier: Segues.toAuthentication, sender: nil)
+            }
+            let cancelAction = UIAlertAction(title: "Nevermind", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

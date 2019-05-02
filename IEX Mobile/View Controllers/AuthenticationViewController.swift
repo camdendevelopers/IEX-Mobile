@@ -149,6 +149,8 @@ class AuthenticationViewController: UIViewController {
             Constants.hasAuthenticated = true
             IEXSwift.shared.publicToken = KeychainService.shared[Constants.publicTokenKey] ?? ""
             IEXSwift.shared.privateToken = KeychainService.shared[Constants.privateTokenKey]
+            IEXSwift.shared.testPrivateToken = KeychainService.shared[Constants.testPrivateTokenKey]
+            IEXSwift.shared.testPublicToken = KeychainService.shared[Constants.testPublicTokenKey]
 
             DispatchQueue.main.sync {
                 self.performSegue(withIdentifier: Segues.toApplication, sender: nil)

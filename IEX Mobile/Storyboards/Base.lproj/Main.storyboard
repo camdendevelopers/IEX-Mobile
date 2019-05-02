@@ -779,55 +779,49 @@
                                             <segue destination="4uv-qa-pbH" kind="show" id="MLv-AK-Sjo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y0D-HR-ph9">
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y0D-HR-ph9">
                                         <rect key="frame" x="0.0" y="241.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y0D-HR-ph9" id="t6T-EP-hRv">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-PC-qvn">
-                                                    <rect key="frame" x="16" y="8" width="382" height="27.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-PC-qvn">
+                                                    <rect key="frame" x="20" y="8" width="374" height="27.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Clear Recent Searches">
                                                         <color key="titleColor" red="0.25882352941176467" green="0.44313725490196076" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="clearRecentSearchesButtonPressed" destination="RdY-5T-m39" eventType="touchUpInside" id="wfx-HY-WgM"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3hg-PC-qvn" firstAttribute="leading" secondItem="t6T-EP-hRv" secondAttribute="leading" constant="16" id="Dfl-qq-ikt"/>
+                                                <constraint firstItem="3hg-PC-qvn" firstAttribute="leading" secondItem="t6T-EP-hRv" secondAttribute="leading" constant="20" id="Dfl-qq-ikt"/>
                                                 <constraint firstItem="3hg-PC-qvn" firstAttribute="top" secondItem="t6T-EP-hRv" secondAttribute="top" constant="8" id="mt8-F0-fdp"/>
-                                                <constraint firstAttribute="trailing" secondItem="3hg-PC-qvn" secondAttribute="trailing" constant="16" id="nRl-kf-nn3"/>
+                                                <constraint firstAttribute="trailing" secondItem="3hg-PC-qvn" secondAttribute="trailing" constant="20" id="nRl-kf-nn3"/>
                                                 <constraint firstAttribute="bottom" secondItem="3hg-PC-qvn" secondAttribute="bottom" constant="8" id="sIN-Yw-IIM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EsV-XQ-1KE">
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EsV-XQ-1KE">
                                         <rect key="frame" x="0.0" y="285.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EsV-XQ-1KE" id="pew-yy-lbl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-nl-OJQ">
-                                                    <rect key="frame" x="16" y="8" width="382" height="27.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-nl-OJQ">
+                                                    <rect key="frame" x="20" y="8" width="374" height="27.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Remove All Tokens ">
                                                         <color key="titleColor" red="0.98431372549019602" green="0.34901960784313724" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="removeTokensButtonPressed" destination="RdY-5T-m39" eventType="touchUpInside" id="j9I-ST-hy7"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="ufb-nl-OJQ" secondAttribute="bottom" constant="8" id="IXZ-At-yHa"/>
-                                                <constraint firstItem="ufb-nl-OJQ" firstAttribute="leading" secondItem="pew-yy-lbl" secondAttribute="leading" constant="16" id="Vuu-SS-jUe"/>
+                                                <constraint firstItem="ufb-nl-OJQ" firstAttribute="leading" secondItem="pew-yy-lbl" secondAttribute="leading" constant="20" id="Vuu-SS-jUe"/>
                                                 <constraint firstItem="ufb-nl-OJQ" firstAttribute="top" secondItem="pew-yy-lbl" secondAttribute="top" constant="8" id="W4z-YP-VUk"/>
-                                                <constraint firstAttribute="trailing" secondItem="ufb-nl-OJQ" secondAttribute="trailing" constant="16" id="wFN-8S-dYq"/>
+                                                <constraint firstAttribute="trailing" secondItem="ufb-nl-OJQ" secondAttribute="trailing" constant="20" id="wFN-8S-dYq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -843,7 +837,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ANO-9H-y3J">
-                                                    <rect key="frame" x="16" y="8" width="382" height="27.5"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="27.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay as You Go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="975-9s-voQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="109" height="27.5"/>
@@ -851,8 +845,8 @@
                                                             <color key="textColor" red="0.031372549019607843" green="0.054901960784313725" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Omr-d6-teF">
-                                                            <rect key="frame" x="333" y="0.0" width="51" height="27.5"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Omr-d6-teF">
+                                                            <rect key="frame" x="325" y="0.0" width="51" height="27.5"/>
                                                             <color key="onTintColor" red="0.93725490196078431" green="0.0" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <action selector="payAsYouGoSwitchChanged:" destination="RdY-5T-m39" eventType="valueChanged" id="9Da-SF-Q65"/>
@@ -863,8 +857,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ANO-9H-y3J" firstAttribute="top" secondItem="UqG-cU-G2L" secondAttribute="top" constant="8" id="AQm-29-58F"/>
-                                                <constraint firstAttribute="trailing" secondItem="ANO-9H-y3J" secondAttribute="trailing" constant="16" id="B6O-jU-02w"/>
-                                                <constraint firstItem="ANO-9H-y3J" firstAttribute="leading" secondItem="UqG-cU-G2L" secondAttribute="leading" constant="16" id="NuW-cb-NtS"/>
+                                                <constraint firstAttribute="trailing" secondItem="ANO-9H-y3J" secondAttribute="trailing" constant="20" id="B6O-jU-02w"/>
+                                                <constraint firstItem="ANO-9H-y3J" firstAttribute="leading" secondItem="UqG-cU-G2L" secondAttribute="leading" constant="20" id="NuW-cb-NtS"/>
                                                 <constraint firstAttribute="bottom" secondItem="ANO-9H-y3J" secondAttribute="bottom" constant="8" id="keJ-Ov-vWg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -955,6 +949,7 @@
                         <outlet property="environmentLabel" destination="S33-W8-okg" id="MVe-9c-u5I"/>
                         <outlet property="informationHeaderView" destination="i6i-bq-DmK" id="grQ-D9-NfZ"/>
                         <outlet property="montlyLimitLabel" destination="sK8-gH-JOt" id="yoZ-4w-cNS"/>
+                        <outlet property="payAsYouGoSwitch" destination="Omr-d6-teF" id="Rdu-vO-cLB"/>
                         <outlet property="serviceStatusLabel" destination="Igh-8l-aZD" id="w9V-S4-u2L"/>
                         <outlet property="signoutButton" destination="RGg-na-3Kd" id="hA0-3h-lIe"/>
                         <outlet property="subscriptionTermLabel" destination="S68-wG-xRd" id="JDZ-F0-HVe"/>

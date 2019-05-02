@@ -11,10 +11,9 @@ import Alamofire
 
 extension IEXSwift {
     func fetchStockSymbols(completion: @escaping (Result<[StockSymbol]>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + IEXReferenceDataEndpoint.symbols.path
-        let parameters: Parameters = ["token": token]
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        let finalParameters: Parameters = ["token": serviceToken]
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return

@@ -15,6 +15,7 @@ class CompanySearchViewController: UIViewController {
     var recentSearches: [StockSymbol] = []
     var stocks: [StockSymbol] = []
     var filteredStocks: [StockSymbol] = []
+    var environment: IEXEnvironment = IEXSwift.shared.environment
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,13 @@ class CompanySearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getRecentSearches()
+
+        if IEXSwift.shared.environment != environment {
+            startLoading()
+            getStocks()
+        }
+
+        environment = IEXSwift.shared.environment
     }
 
     private func getRecentSearches() {

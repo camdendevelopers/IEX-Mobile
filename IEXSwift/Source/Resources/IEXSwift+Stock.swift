@@ -11,11 +11,10 @@ import Alamofire
 
 extension IEXSwift {
     func fetchCompanyLogo(ticker: String, completion: @escaping (Result<CompanyLogo>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.logo.path, ticker)
-        let parameters: Parameters = ["token": token]
+        let finalParameters: Parameters = ["token": serviceToken]
 
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return
@@ -39,11 +38,10 @@ extension IEXSwift {
     }
 
     func fetchCompanyInformation(ticker: String, completion: @escaping (Result<CompanyInformation>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.company.path, ticker)
-        let parameters: Parameters = ["token": token]
+        let finalParameters: Parameters = ["token": serviceToken]
 
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return
@@ -66,11 +64,10 @@ extension IEXSwift {
     }
 
     func fetchAdvanceStatistics(ticker: String, completion: @escaping (Result<CompanyAdvancedStatistics>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.advancedStats.path, ticker)
-        let parameters: Parameters = ["token": token]
+        let finalParameters: Parameters = ["token": serviceToken]
 
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return
@@ -93,11 +90,10 @@ extension IEXSwift {
     }
 
     func fetchNews(ticker: String, completion: @escaping (Result<[CompanyNewsArticle]>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.news.path, ticker)
-        let parameters: Parameters = ["token": token]
+        let finalParameters: Parameters = ["token": serviceToken]
 
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return
@@ -120,11 +116,10 @@ extension IEXSwift {
     }
 
     func fetchChart(ticker: String, range: IEXChartRange, completion: @escaping (Result<[CompanyChartDataItem]>) -> Void) {
-        let token = privateToken ?? publicToken
         let requestURL = environment.baseURL + String(format: IEXStockEndpoint.chart.path, ticker) + range.query
-        let parameters: Parameters = ["token": token]
+        let finalParameters: Parameters = ["token": serviceToken]
         
-        Alamofire.request(requestURL, method: .get, parameters: parameters).responseData(completionHandler: { response in
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
                 completion(.failure(error))
                 return

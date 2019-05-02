@@ -14,7 +14,15 @@ class IEXSwift {
 
     var publicToken: String = ""
     var privateToken: String?
-    var testingPublicToken: String?
-    var testingPrivateToken: String?
+    var testPublicToken: String?
+    var testPrivateToken: String?
     var environment: IEXEnvironment = .v1
+
+    var serviceToken: String {
+        if environment == .testing {
+            return testPrivateToken ?? testPublicToken ?? ""
+        } else {
+            return privateToken ?? publicToken
+        }
+    }
 }

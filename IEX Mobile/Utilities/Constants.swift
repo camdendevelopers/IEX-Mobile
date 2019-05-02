@@ -11,6 +11,8 @@ import Foundation
 enum Constants {
     static let publicTokenKey = "publicTokenKey"
     static let privateTokenKey = "privateTokenKey"
+    static let testPublicTokenKey = "testPublicTokenKey"
+    static let testPrivateTokenKey = "testPrivateTokenKey"
     static let hasEnrolledInBiometricsKey = "hasEnrolledInBiometrics"
     static let hasAuthenticatedKey = "hasAuthenticatedKey"
     static let IEXRegisterURL = "https://iexcloud.io/cloud-login#/register/"

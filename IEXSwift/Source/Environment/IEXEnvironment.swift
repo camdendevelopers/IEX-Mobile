@@ -29,7 +29,7 @@ enum IEXEnvironment: CaseIterable {
         case .beta:
             return "/beta"
         case .testing:
-            return "/latest"
+            return "/stable"
         }
     }
 
