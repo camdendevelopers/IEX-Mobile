@@ -11,12 +11,19 @@ import UIKit
 import SafariServices
 
 class AuthenticationViewController: UIViewController {
+    @IBOutlet var contentStackView: UIStackView!
+    @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authenticateButton: UIButton!
     @IBOutlet var publicTokenTextField: UITextField!
     @IBOutlet var privateTokenTextField: UITextField!
     @IBOutlet var confirmationButton: UIButton!
     @IBOutlet var existingUserContentStackView: UIStackView!
+
+    // This flag is only used whenever you
+    // you log out and don't want to trigger authentication
+    // on appearance.
+    var triggerAuthenticationOnAppear: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +48,11 @@ class AuthenticationViewController: UIViewController {
         }
         existingUserContentStackView.isHidden = false
 
-        authenticateAndNavigateToApp()
+        contentStackView.setCustomSpacing(20, after: logoImageView)
+
+        if triggerAuthenticationOnAppear {
+            authenticateAndNavigateToApp()
+        }
     }
 
     private func setupLabel() {
@@ -152,10 +163,19 @@ class AuthenticationViewController: UIViewController {
             IEXSwift.shared.testPrivateToken = KeychainService.shared[Constants.testPrivateTokenKey]
             IEXSwift.shared.testPublicToken = KeychainService.shared[Constants.testPublicTokenKey]
 
+            if let environmentValue = UserDefaults.standard.string(forKey: Constants.environmentKey), let environment = IEXEnvironment(rawValue: environmentValue) {
+                IEXSwift.shared.environment = environment
+            }
+
             DispatchQueue.main.sync {
                 self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
             }
         }
+    }
+
+    @IBAction func attributionButtonPressed() {
+        guard let url = URL(string: "https://iexcloud.io") else { return }
+        present(SFSafariViewController(url: url), animated: true, completion: nil)
     }
 }
 

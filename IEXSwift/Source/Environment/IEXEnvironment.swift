@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum IEXEnvironment: CaseIterable {
+enum IEXEnvironment: String, CaseIterable {
     case v1
     case beta
     case testing

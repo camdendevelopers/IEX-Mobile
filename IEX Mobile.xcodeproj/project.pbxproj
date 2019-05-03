@@ -12,6 +12,10 @@
 		8D5FAAD2227B24100099EFB2 /* SelectionFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD1227B24100099EFB2 /* SelectionFeedbackGenerator.swift */; };
 		8D5FAAD4227B243F0099EFB2 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD3227B243F0099EFB2 /* FeedbackPageBulletinItem.swift */; };
 		8D5FAAD6227B24680099EFB2 /* TextFieldBullentinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD5227B24680099EFB2 /* TextFieldBullentinPage.swift */; };
+		8D5FAAD8227BEF040099EFB2 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD7227BEF040099EFB2 /* Account.storyboard */; };
+		8D5FAADA227BEF8B0099EFB2 /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD9227BEF8B0099EFB2 /* Market.storyboard */; };
+		8D5FAADC227BEFEE0099EFB2 /* ReferenceData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5FAADB227BEFEE0099EFB2 /* ReferenceData.storyboard */; };
+		8D5FAADE227BF06D0099EFB2 /* Company.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D5FAADD227BF06D0099EFB2 /* Company.storyboard */; };
 		8D5FF94D2279CECF00938CED /* IEXSwift+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF94C2279CECF00938CED /* IEXSwift+Account.swift */; };
 		8D5FF94F2279CF1200938CED /* AccountMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF94E2279CF1200938CED /* AccountMetadata.swift */; };
 		8D5FF9512279D07100938CED /* IEXAccountEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */; };
@@ -88,6 +92,10 @@
 		8D5FAAD1227B24100099EFB2 /* SelectionFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionFeedbackGenerator.swift; sourceTree = "<group>"; };
 		8D5FAAD3227B243F0099EFB2 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		8D5FAAD5227B24680099EFB2 /* TextFieldBullentinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBullentinPage.swift; sourceTree = "<group>"; };
+		8D5FAAD7227BEF040099EFB2 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		8D5FAAD9227BEF8B0099EFB2 /* Market.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
+		8D5FAADB227BEFEE0099EFB2 /* ReferenceData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReferenceData.storyboard; sourceTree = "<group>"; };
+		8D5FAADD227BF06D0099EFB2 /* Company.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Company.storyboard; sourceTree = "<group>"; };
 		8D5FF94C2279CECF00938CED /* IEXSwift+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IEXSwift+Account.swift"; sourceTree = "<group>"; };
 		8D5FF94E2279CF1200938CED /* AccountMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMetadata.swift; sourceTree = "<group>"; };
 		8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXAccountEndpoint.swift; sourceTree = "<group>"; };
@@ -243,6 +251,10 @@
 			children = (
 				8D7C44432272564E00C6609B /* Authentication.storyboard */,
 				8D7C44112272546700C6609B /* Main.storyboard */,
+				8D5FAADD227BF06D0099EFB2 /* Company.storyboard */,
+				8D5FAADB227BEFEE0099EFB2 /* ReferenceData.storyboard */,
+				8D5FAAD9227BEF8B0099EFB2 /* Market.storyboard */,
+				8D5FAAD7227BEF040099EFB2 /* Account.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -500,10 +512,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5FAADC227BEFEE0099EFB2 /* ReferenceData.storyboard in Resources */,
+				8D5FAADA227BEF8B0099EFB2 /* Market.storyboard in Resources */,
+				8D5FAADE227BF06D0099EFB2 /* Company.storyboard in Resources */,
 				8D7C44442272564E00C6609B /* Authentication.storyboard in Resources */,
 				8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */,
 				8DFF1F4F22751D65005B807A /* NewsArticleView.xib in Resources */,
 				8D7C44182272546800C6609B /* Assets.xcassets in Resources */,
+				8D5FAAD8227BEF040099EFB2 /* Account.storyboard in Resources */,
 				8D7C44132272546700C6609B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

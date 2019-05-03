@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tGv-o2-LWz">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Market-->
+        <scene sceneID="1HA-KI-bXc">
+            <objects>
+                <viewController id="FEr-PH-dKq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmS-ev-52p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="R2p-SM-4nC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Market" id="fPb-fS-fQ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AuR-54-Gtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720" y="706"/>
+        </scene>
+        <!--Market-->
+        <scene sceneID="oDo-Ob-9dI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tGv-o2-LWz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Market" image="market-icon-empty" selectedImage="market-icon-filled" id="Ahk-C1-y8d"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BBg-AQ-Ooj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FEr-PH-dKq" kind="relationship" relationship="rootViewController" id="9XR-T0-MLv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tal-fZ-Jvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-97" y="706"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="market-icon-empty" width="18" height="16"/>
+        <image name="market-icon-filled" width="20" height="20"/>
+    </resources>
+</document>

@@ -123,6 +123,14 @@ class AccountViewController: UITableViewController {
             sender.isOn = isSuccess
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.toAuthentication {
+            let navigationController = segue.destination as? UINavigationController
+            let authenticationViewController = navigationController?.topViewController as? AuthenticationViewController
+            authenticationViewController?.triggerAuthenticationOnAppear = false
+        }
+    }
 }
 
 extension AccountViewController {
@@ -136,9 +144,7 @@ extension AccountViewController {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
 
         if cell.tag == AccountCells.recentSearches.rawValue {
-            let emptySearches: [StockSymbol] = []
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
-            impactFeedbackGenerator.impactOccurred()
+            IEXMobileUtilities.clearRecentSearches()
 
         } else if cell.tag == AccountCells.deleteTokens.rawValue {
             let alert = UIAlertController(title: "Are you sure you want to delete all tokens from this device?", message: "Removing your tokens will log you out and you will have to re-enter them next time you open the app.", preferredStyle: .actionSheet)

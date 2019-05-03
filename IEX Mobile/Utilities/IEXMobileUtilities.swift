@@ -10,6 +10,11 @@ import Foundation
 import SwiftDate
 
 enum IEXMobileUtilities {
+    static func clearRecentSearches() {
+        let emptySearches: [StockSymbol] = []
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
+    }
+
     static func relativeFormattingFromToday(_ date: Date) -> String? {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full

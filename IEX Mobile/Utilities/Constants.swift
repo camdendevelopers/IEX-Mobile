@@ -17,6 +17,7 @@ enum Constants {
     static let hasAuthenticatedKey = "hasAuthenticatedKey"
     static let IEXRegisterURL = "https://iexcloud.io/cloud-login#/register/"
     static let recentSearchesKey = "recentSearchesKey"
+    static let environmentKey = "environmentKey"
 
     static var hasTokens: Bool {
         return KeychainService.shared[publicTokenKey] != nil || KeychainService.shared[privateTokenKey] != nil

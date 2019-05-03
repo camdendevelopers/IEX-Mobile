@@ -41,13 +41,16 @@ class TokensTableViewController: UITableViewController {
         KeychainService.shared[Constants.publicTokenKey] = publicToken
         IEXSwift.shared.publicToken = publicToken
 
-        KeychainService.shared[Constants.privateTokenKey] = privateToken
-        IEXSwift.shared.privateToken = privateToken
+        let finalPrivateToken = privateToken.isEmpty ? nil : privateToken
+        KeychainService.shared[Constants.privateTokenKey] = finalPrivateToken
+        IEXSwift.shared.privateToken = finalPrivateToken
 
-        KeychainService.shared[Constants.testPublicTokenKey] = testPublicToken
-        IEXSwift.shared.testPublicToken = testPublicToken
+        let finalTestPublicToken = testPublicToken.isEmpty ? nil : testPublicToken
+        KeychainService.shared[Constants.testPublicTokenKey] = finalTestPublicToken
+        IEXSwift.shared.testPublicToken = finalTestPublicToken
 
-        KeychainService.shared[Constants.testPrivateTokenKey] = testPrivateToken
-        IEXSwift.shared.testPrivateToken = testPrivateToken
+        let finalTestPrivateToken = testPrivateToken.isEmpty ? nil : testPrivateToken
+        KeychainService.shared[Constants.testPrivateTokenKey] = finalTestPrivateToken
+        IEXSwift.shared.testPrivateToken = finalTestPrivateToken
     }
 }

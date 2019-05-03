@@ -34,7 +34,12 @@ class EnvironmentTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         let environment = IEXEnvironment.allCases[indexPath.row]
 
+        if environment != IEXSwift.shared.environment {
+            IEXMobileUtilities.clearRecentSearches()
+        }
+
         IEXSwift.shared.environment = environment
+        UserDefaults.standard.set(environment.rawValue, forKey: Constants.environmentKey)
 
         if environment == .testing && (IEXSwift.shared.testPublicToken == nil || IEXSwift.shared.testPrivateToken == nil) {
             let alert = UIAlertController(title: "Warning on Selection", message: "You have selected to use the testing environment, but you have not entered testing tokens. Please head over to Add/Modify tokens and update your testing tokens there. You will not be able to make any service calls if these are not entered.", preferredStyle: .alert)

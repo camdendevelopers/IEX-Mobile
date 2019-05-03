@@ -62,6 +62,7 @@ class CompanySearchViewController: UIViewController {
     private func setupSearchController() {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Apple, Inc."
+        searchController.searchBar.showsScopeBar = true
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController

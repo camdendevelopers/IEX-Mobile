@@ -95,12 +95,19 @@ class CompanyInformationViewController: UIViewController {
             self.companyInformation = companyInformation
             self.nameLabel.text = companyInformation.companyName
             self.descriptionLabel.text = companyInformation.description
-            self.ceoNameLabel.text = companyInformation.CEO
             self.sectorLabel.text = companyInformation.sector
             self.industryLabel.text = companyInformation.industry
             self.exchangeLabel.text = companyInformation.exchange
-            self.websiteButton.setTitle(companyInformation.website, for: .normal)
-            self.websiteButton.isEnabled = !companyInformation.website.isEmpty
+
+            let ceo = companyInformation.CEO
+            if !ceo.isEmpty { self.ceoNameLabel.text = ceo }
+
+            let website = companyInformation.website
+            if !website.isEmpty {
+                self.websiteButton.setTitleColor(UIColor.IEX.blue, for: .normal)
+                self.websiteButton.setTitle(companyInformation.website, for: .normal)
+                self.websiteButton.isEnabled = !companyInformation.website.isEmpty
+            }
         }
     }
 
@@ -250,7 +257,7 @@ class CompanyInformationViewController: UIViewController {
     }
 
     @IBAction func websiteButtonPressed() {
-        guard let website = companyInformation?.website, !website.isEmpty else { return }
+        guard IEXSwift.shared.environment != .testing, let website = companyInformation?.website, !website.isEmpty else { return }
         guard let url = URL(string: website) else { return }
         present(SFSafariViewController(url: url), animated: true)
     }
