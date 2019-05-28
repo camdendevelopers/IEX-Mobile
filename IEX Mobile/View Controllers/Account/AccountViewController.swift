@@ -8,6 +8,7 @@
 
 import UIKit
 import BLTNBoard
+import SafariServices
 
 class AccountViewController: UITableViewController {
     @IBOutlet var serviceStatusLabel: UILabel!
@@ -28,6 +29,7 @@ class AccountViewController: UITableViewController {
         case deleteTokens
     }
 
+    var showedAccountFetchErrorMessage = false
     var receivedAccountData = false
     let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
@@ -75,12 +77,10 @@ class AccountViewController: UITableViewController {
             guard let status = result.value else {
                 self.serviceStatusLabel.text = "Down"
                 self.serviceStatusLabel.textColor = UIColor.IEX.errorRed
-                self.receivedAccountData = false
                 self.tableView.reloadData()
                 return
             }
 
-            self.receivedAccountData = true
             self.serviceStatusLabel.text = status.status.capitalized
             self.serviceStatusLabel.textColor = status.status == "up" ? UIColor.IEX.green : UIColor.IEX.errorRed
             self.tableView.reloadData()
@@ -89,7 +89,28 @@ class AccountViewController: UITableViewController {
 
     private func fetchAccountMetadata() {
         IEXSwift.shared.fetchAccountMetadata { result in
-            guard let metadata = result.value else { return }
+            guard let metadata = result.value else {
+                self.receivedAccountData = false
+                self.tableView.reloadData()
+
+                guard !self.showedAccountFetchErrorMessage else { return }
+
+                let alert = UIAlertController(title: "IEX Service Error", message: "We were unable to fetch IEX account specific settings. Please visit IEXCloud.io directly or try again later.", preferredStyle: .alert)
+                let openIEXAction = UIAlertAction(title: "Go to IEXCloud.io", style: .default, handler: { _ in
+                    guard let url = URL(string: "https://iexcloud.io/cloud-login") else { return }
+                    self.present(SFSafariViewController(url: url), animated: true, completion: nil)
+                })
+
+                let closeAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+                alert.addAction(openIEXAction)
+                alert.addAction(closeAction)
+
+                self.present(alert, animated: true, completion: {
+                    self.showedAccountFetchErrorMessage = true
+                })
+
+                return
+            }
 
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
@@ -98,12 +119,14 @@ class AccountViewController: UITableViewController {
             let montlyLimitAmount = formatter.string(from: NSNumber(value: metadata.messageLimit)) ?? ""
             let messagesUsed = formatter.string(from: NSNumber(value: metadata.messagesUsed)) ?? ""
 
+            self.receivedAccountData = true
             self.accountPlanLabel.text = metadata.tierName.capitalized
             self.subscriptionTermLabel.text = metadata.subscriptionTermType.capitalized
             self.montlyLimitLabel.text = "Monthly Limit: " + montlyLimitAmount
             self.usedMessagesLabel.text = "Messaged Used: " + messagesUsed
             self.payAsYouGoSwitch.isEnabled = metadata.payAsYouGoEnabled != nil
             self.payAsYouGoSwitch.isOn = metadata.payAsYouGoEnabled ?? false
+            self.tableView.reloadData()
         }
     }
 
@@ -135,7 +158,7 @@ class AccountViewController: UITableViewController {
 
 extension AccountViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return IEXSwift.shared.privateToken == nil && !receivedAccountData ? 1 : 2
+        return IEXSwift.shared.privateToken == nil || !receivedAccountData ? 1 : 2
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

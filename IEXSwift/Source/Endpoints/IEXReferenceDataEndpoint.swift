@@ -10,11 +10,17 @@ import Foundation
 
 enum IEXReferenceDataEndpoint {
     case symbols
+    case currencies
+    case exchangeRate
 
     var path: String {
         switch self {
         case .symbols:
             return "/ref-data/symbols"
+        case .currencies:
+            return "/ref-data/fx/symbols"
+        case .exchangeRate:
+            return "/fx/rate/%@/%@"
         }
     }
 }

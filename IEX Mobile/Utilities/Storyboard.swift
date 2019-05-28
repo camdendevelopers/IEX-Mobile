@@ -11,6 +11,8 @@ import UIKit
 enum Storyboard: String {
     case main = "Main"
     case trips = "Authentication"
+    case company = "Company"
+    case account = "Account"
 
     var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: nil)

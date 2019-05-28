@@ -11,8 +11,8 @@ import Foundation
 struct AccountMetadata: Codable {
     let payAsYouGoEnabled: Bool?
     let effectiveDate: Date
-    let endDateEffective: Date
-    let overagesEnabled: Bool
+    let endDateEffective: Date?
+    let overagesEnabled: Bool?
     let subscriptionTermType: String
     let tierName: String
     let messageLimit: Int

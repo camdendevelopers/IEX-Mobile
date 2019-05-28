@@ -36,7 +36,7 @@ class TokensTableViewController: UITableViewController {
         let publicToken = livePublicTokenTextField.text ?? ""
         let privateToken = livePrivateTokenTextField.text ?? ""
         let testPublicToken = testingPublicTokenTextField.text ?? ""
-        let testPrivateToken = testingPublicTokenTextField.text ?? ""
+        let testPrivateToken = testingPrivateTokenTextField.text ?? ""
 
         KeychainService.shared[Constants.publicTokenKey] = publicToken
         IEXSwift.shared.publicToken = publicToken

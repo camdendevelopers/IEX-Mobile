@@ -8,11 +8,25 @@
 
 import Foundation
 import SwiftDate
+import Alamofire
 
 enum IEXMobileUtilities {
     static func clearRecentSearches() {
         let emptySearches: [StockSymbol] = []
         UserDefaults.standard.set(try? PropertyListEncoder().encode(emptySearches), forKey: Constants.recentSearchesKey)
+    }
+
+    static func fetchCountryFlag(with code: String, completion: @escaping (UIImage) -> Void) {
+        var code = code
+        code.removeLast(1)
+        let url = String(format: URLs.flags, code)
+        Alamofire.request(url).response { response in
+            guard let data = response.data, let image = UIImage(data: data) else {
+                completion(#imageLiteral(resourceName: "defaultFlag-icon"))
+                return
+            }
+            completion(image)
+        }
     }
 
     static func relativeFormattingFromToday(_ date: Date) -> String? {

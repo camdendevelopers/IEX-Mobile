@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		17B93F88A417D34CE0A10AB5 /* Pods_IEX_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC5F3996AEE0EC5A5F18433 /* Pods_IEX_MobileUITests.framework */; };
 		398D917F930C28F597E1BB14 /* Pods_IEX_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298786589319D5BF7A18C445 /* Pods_IEX_MobileTests.framework */; };
+		8D29CD182290EC09003B2D68 /* CurrencyExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD172290EC09003B2D68 /* CurrencyExchangeViewController.swift */; };
+		8D29CD1B2290EEAB003B2D68 /* CurrenciesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD1A2290EEAB003B2D68 /* CurrenciesTableViewController.swift */; };
+		8D29CD1D2290EEF6003B2D68 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD1C2290EEF6003B2D68 /* Currency.swift */; };
+		8D29CD1F2290F3EA003B2D68 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD1E2290F3EA003B2D68 /* CurrencyTextField.swift */; };
+		8D29CD212290FC6B003B2D68 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD202290FC6B003B2D68 /* ExchangeRate.swift */; };
+		8D29CD232291051D003B2D68 /* CurrencySymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29CD222291051D003B2D68 /* CurrencySymbols.swift */; };
+		8D3C9A02229C8BDB00CE481F /* CurrencyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C9A00229C8BDB00CE481F /* CurrencyTableCell.swift */; };
+		8D3C9A03229C8BDB00CE481F /* CurrencyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C9A01229C8BDB00CE481F /* CurrencyTableCell.xib */; };
+		8D3C9A05229C9FCA00CE481F /* IEXKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C9A04229C9FCA00CE481F /* IEXKeyboard.xib */; };
+		8D3C9A07229C9FF000CE481F /* IEXKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C9A06229C9FF000CE481F /* IEXKeyboard.swift */; };
 		8D5FAAD2227B24100099EFB2 /* SelectionFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD1227B24100099EFB2 /* SelectionFeedbackGenerator.swift */; };
 		8D5FAAD4227B243F0099EFB2 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD3227B243F0099EFB2 /* FeedbackPageBulletinItem.swift */; };
 		8D5FAAD6227B24680099EFB2 /* TextFieldBullentinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FAAD5227B24680099EFB2 /* TextFieldBullentinPage.swift */; };
@@ -35,6 +45,10 @@
 		8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444B227261B900C6609B /* ViewController+Loading.swift */; };
 		8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C444E2272635E00C6609B /* UIColor+IEX.swift */; };
 		8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7C445022726E6B00C6609B /* UITextField+Text.swift */; };
+		8D8B1D4A227FC61400A05684 /* BalanceSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B1D49227FC61400A05684 /* BalanceSheetViewController.swift */; };
+		8D8B1D4C227FC6BA00A05684 /* BalanceSheetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B1D4B227FC6BA00A05684 /* BalanceSheetPageViewController.swift */; };
+		8D8B1D4E227FC6F900A05684 /* BalanceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B1D4D227FC6F900A05684 /* BalanceSheet.swift */; };
+		8DD2EC84229B08280076CBAE /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD2EC83229B08280076CBAE /* URLs.swift */; };
 		8DFF1F3322729333005B807A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F3222729333005B807A /* Constants.swift */; };
 		8DFF1F372272A5CF005B807A /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F362272A5CF005B807A /* KeychainService.swift */; };
 		8DFF1F3922734993005B807A /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF1F3822734993005B807A /* StockSymbol.swift */; };
@@ -89,6 +103,16 @@
 		611E485C2DDC7A1B436C288D /* Pods_IEX_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEX_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4D628C33716D69AD05A8D4 /* Pods-IEX MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileTests.debug.xcconfig"; path = "Target Support Files/Pods-IEX MobileTests/Pods-IEX MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E75F37A9DD6AC39EE1AE5DD /* Pods-IEX MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEX MobileUITests.release.xcconfig"; path = "Target Support Files/Pods-IEX MobileUITests/Pods-IEX MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D29CD172290EC09003B2D68 /* CurrencyExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeViewController.swift; sourceTree = "<group>"; };
+		8D29CD1A2290EEAB003B2D68 /* CurrenciesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesTableViewController.swift; sourceTree = "<group>"; };
+		8D29CD1C2290EEF6003B2D68 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		8D29CD1E2290F3EA003B2D68 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		8D29CD202290FC6B003B2D68 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		8D29CD222291051D003B2D68 /* CurrencySymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySymbols.swift; sourceTree = "<group>"; };
+		8D3C9A00229C8BDB00CE481F /* CurrencyTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableCell.swift; sourceTree = "<group>"; };
+		8D3C9A01229C8BDB00CE481F /* CurrencyTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableCell.xib; sourceTree = "<group>"; };
+		8D3C9A04229C9FCA00CE481F /* IEXKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IEXKeyboard.xib; sourceTree = "<group>"; };
+		8D3C9A06229C9FF000CE481F /* IEXKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXKeyboard.swift; sourceTree = "<group>"; };
 		8D5FAAD1227B24100099EFB2 /* SelectionFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionFeedbackGenerator.swift; sourceTree = "<group>"; };
 		8D5FAAD3227B243F0099EFB2 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		8D5FAAD5227B24680099EFB2 /* TextFieldBullentinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBullentinPage.swift; sourceTree = "<group>"; };
@@ -121,6 +145,10 @@
 		8D7C444B227261B900C6609B /* ViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Loading.swift"; sourceTree = "<group>"; };
 		8D7C444E2272635E00C6609B /* UIColor+IEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IEX.swift"; sourceTree = "<group>"; };
 		8D7C445022726E6B00C6609B /* UITextField+Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Text.swift"; sourceTree = "<group>"; };
+		8D8B1D49227FC61400A05684 /* BalanceSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceSheetViewController.swift; sourceTree = "<group>"; };
+		8D8B1D4B227FC6BA00A05684 /* BalanceSheetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceSheetPageViewController.swift; sourceTree = "<group>"; };
+		8D8B1D4D227FC6F900A05684 /* BalanceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceSheet.swift; sourceTree = "<group>"; };
+		8DD2EC83229B08280076CBAE /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		8DFF1F3222729333005B807A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8DFF1F362272A5CF005B807A /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		8DFF1F3822734993005B807A /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
@@ -179,6 +207,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D29CD192290EC0D003B2D68 /* Currency Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				8D29CD172290EC09003B2D68 /* CurrencyExchangeViewController.swift */,
+				8D29CD1A2290EEAB003B2D68 /* CurrenciesTableViewController.swift */,
+			);
+			path = "Currency Exchange";
+			sourceTree = "<group>";
+		};
 		8D7C44012272546700C6609B = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +306,7 @@
 				8DFF1F362272A5CF005B807A /* KeychainService.swift */,
 				8DFF1F5422763C6E005B807A /* IEXMobileUtilities.swift */,
 				8D5FAAD1227B24100099EFB2 /* SelectionFeedbackGenerator.swift */,
+				8DD2EC83229B08280076CBAE /* URLs.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -283,6 +321,35 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8D8B1D4F227FC8E600A05684 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F5222763416005B807A /* CompanySearchViewController.swift */,
+				8DFF1F3C22735FFD005B807A /* CompanyInformationViewController.swift */,
+				8D8B1D4B227FC6BA00A05684 /* BalanceSheetPageViewController.swift */,
+				8D8B1D49227FC61400A05684 /* BalanceSheetViewController.swift */,
+			);
+			path = Company;
+			sourceTree = "<group>";
+		};
+		8D8B1D50227FC8F800A05684 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8DFF1F6D22788643005B807A /* AccountViewController.swift */,
+				8DFF1F7522796441005B807A /* TokensTableViewController.swift */,
+				8D5FF9522279D63B00938CED /* EnvironmentTableViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8D8B1D51227FC90300A05684 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		8DFF1F3A22735F57005B807A /* Service Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +360,10 @@
 				8DFF1F5A22764EB8005B807A /* CompanyChartDataItem.swift */,
 				8DFF1F64227813C5005B807A /* CompanyLogo.swift */,
 				8D5FF94E2279CF1200938CED /* AccountMetadata.swift */,
+				8D8B1D4D227FC6F900A05684 /* BalanceSheet.swift */,
+				8D29CD1C2290EEF6003B2D68 /* Currency.swift */,
+				8D29CD202290FC6B003B2D68 /* ExchangeRate.swift */,
+				8D29CD222291051D003B2D68 /* CurrencySymbols.swift */,
 			);
 			path = "Service Objects";
 			sourceTree = "<group>";
@@ -300,12 +371,10 @@
 		8DFF1F3B22735F61005B807A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8DFF1F5222763416005B807A /* CompanySearchViewController.swift */,
-				8DFF1F3C22735FFD005B807A /* CompanyInformationViewController.swift */,
-				8D7C444522725F8300C6609B /* AuthenticationViewController.swift */,
-				8DFF1F6D22788643005B807A /* AccountViewController.swift */,
-				8DFF1F7522796441005B807A /* TokensTableViewController.swift */,
-				8D5FF9522279D63B00938CED /* EnvironmentTableViewController.swift */,
+				8D8B1D51227FC90300A05684 /* Authentication */,
+				8D8B1D4F227FC8E600A05684 /* Company */,
+				8D8B1D50227FC8F800A05684 /* Account */,
+				8D29CD192290EC0D003B2D68 /* Currency Exchange */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -325,6 +394,11 @@
 				8DFF1F4E22751D65005B807A /* NewsArticleView.xib */,
 				8D5FAAD3227B243F0099EFB2 /* FeedbackPageBulletinItem.swift */,
 				8D5FAAD5227B24680099EFB2 /* TextFieldBullentinPage.swift */,
+				8D29CD1E2290F3EA003B2D68 /* CurrencyTextField.swift */,
+				8D3C9A00229C8BDB00CE481F /* CurrencyTableCell.swift */,
+				8D3C9A01229C8BDB00CE481F /* CurrencyTableCell.xib */,
+				8D3C9A04229C9FCA00CE481F /* IEXKeyboard.xib */,
+				8D3C9A06229C9FF000CE481F /* IEXKeyboard.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -515,8 +589,10 @@
 				8D5FAADC227BEFEE0099EFB2 /* ReferenceData.storyboard in Resources */,
 				8D5FAADA227BEF8B0099EFB2 /* Market.storyboard in Resources */,
 				8D5FAADE227BF06D0099EFB2 /* Company.storyboard in Resources */,
+				8D3C9A05229C9FCA00CE481F /* IEXKeyboard.xib in Resources */,
 				8D7C44442272564E00C6609B /* Authentication.storyboard in Resources */,
 				8D7C441B2272546800C6609B /* LaunchScreen.storyboard in Resources */,
+				8D3C9A03229C8BDB00CE481F /* CurrencyTableCell.xib in Resources */,
 				8DFF1F4F22751D65005B807A /* NewsArticleView.xib in Resources */,
 				8D7C44182272546800C6609B /* Assets.xcassets in Resources */,
 				8D5FAAD8227BEF040099EFB2 /* Account.storyboard in Resources */,
@@ -649,17 +725,26 @@
 				8DFF1F3F2273DAC8005B807A /* IEXSwift.swift in Sources */,
 				8D5FAAD2227B24100099EFB2 /* SelectionFeedbackGenerator.swift in Sources */,
 				8DFF1F4922740A39005B807A /* CompanyAdvancedStatistics.swift in Sources */,
+				8D3C9A07229C9FF000CE481F /* IEXKeyboard.swift in Sources */,
 				8DFF1F5922764E77005B807A /* IEXChartRange.swift in Sources */,
+				8D29CD232291051D003B2D68 /* CurrencySymbols.swift in Sources */,
+				8D29CD1F2290F3EA003B2D68 /* CurrencyTextField.swift in Sources */,
 				8D7C443F2272549800C6609B /* Storyboard.swift in Sources */,
 				8D7C444A227260F600C6609B /* Styles.swift in Sources */,
+				8D8B1D4E227FC6F900A05684 /* BalanceSheet.swift in Sources */,
 				8D7C444F2272635E00C6609B /* UIColor+IEX.swift in Sources */,
 				8D7C44482272606800C6609B /* Segues.swift in Sources */,
 				8DFF1F5322763417005B807A /* CompanySearchViewController.swift in Sources */,
 				8D5FAAD6227B24680099EFB2 /* TextFieldBullentinPage.swift in Sources */,
 				8DFF1F3922734993005B807A /* StockSymbol.swift in Sources */,
+				8D29CD1B2290EEAB003B2D68 /* CurrenciesTableViewController.swift in Sources */,
+				8D3C9A02229C8BDB00CE481F /* CurrencyTableCell.swift in Sources */,
 				8DFF1F5522763C6E005B807A /* IEXMobileUtilities.swift in Sources */,
 				8D7C445122726E6B00C6609B /* UITextField+Text.swift in Sources */,
+				8D29CD182290EC09003B2D68 /* CurrencyExchangeViewController.swift in Sources */,
 				8DFF1F722279582B005B807A /* IEXServiceStatus.swift in Sources */,
+				8D29CD1D2290EEF6003B2D68 /* Currency.swift in Sources */,
+				8D8B1D4A227FC61400A05684 /* BalanceSheetViewController.swift in Sources */,
 				8DFF1F432273F4C9005B807A /* IEXEnvironment.swift in Sources */,
 				8DFF1F3322729333005B807A /* Constants.swift in Sources */,
 				8DFF1F65227813C5005B807A /* CompanyLogo.swift in Sources */,
@@ -674,12 +759,15 @@
 				8DFF1F632277EB7C005B807A /* IEXReferenceDataEndpoint.swift in Sources */,
 				8D7C444622725F8300C6609B /* AuthenticationViewController.swift in Sources */,
 				8DFF1F4C22751D38005B807A /* NewsArticleView.swift in Sources */,
+				8DD2EC84229B08280076CBAE /* URLs.swift in Sources */,
 				8D7C440E2272546700C6609B /* AppDelegate.swift in Sources */,
 				8DFF1F6C22787F82005B807A /* IEXError.swift in Sources */,
 				8DFF1F5B22764EB8005B807A /* CompanyChartDataItem.swift in Sources */,
 				8DFF1F372272A5CF005B807A /* KeychainService.swift in Sources */,
+				8D29CD212290FC6B003B2D68 /* ExchangeRate.swift in Sources */,
 				8D7C44162272546700C6609B /* IEX_Mobile.xcdatamodeld in Sources */,
 				8DFF1F6E22788643005B807A /* AccountViewController.swift in Sources */,
+				8D8B1D4C227FC6BA00A05684 /* BalanceSheetPageViewController.swift in Sources */,
 				8DFF1F70227957F8005B807A /* IEXSwift+Status.swift in Sources */,
 				8D5FF94D2279CECF00938CED /* IEXSwift+Account.swift in Sources */,
 				8D7C444C227261B900C6609B /* ViewController+Loading.swift in Sources */,

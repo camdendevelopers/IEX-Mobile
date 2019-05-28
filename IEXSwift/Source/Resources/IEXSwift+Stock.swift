@@ -142,4 +142,32 @@ extension IEXSwift {
             }
         }).resume()
     }
+
+    func fetchBalanceSheets(ticker: String, last: Int = 12, period: String = "annual", completion: @escaping (Result<BalanceSheets>) -> Void) {
+        let requestURL = environment.baseURL + String(format: IEXStockEndpoint.balanceSheets.path, ticker) + "\(last)"
+        let finalParameters: Parameters = ["token": serviceToken, "period": period, "last": last]
+
+        Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
+            if let error = response.error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = response.data else {
+                completion(.failure(IEXError.noData))
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-d"
+                decoder.dateDecodingStrategy = .formatted(formatter)
+                let dataItems = try decoder.decode(BalanceSheets.self, from: data)
+                completion(.success(dataItems))
+            } catch {
+                completion(.failure(IEXError.corruptedData))
+            }
+        }).resume()
+    }
 }

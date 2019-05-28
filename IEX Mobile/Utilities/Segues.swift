@@ -12,4 +12,6 @@ enum Segues {
     static let toAuthentication = "toAuthenticationSegue"
     static let toCompanyInformation = "toCompanyInformationSegue"
     static let toApplication = "toApplicationSegue"
+    static let toBalanceSheets = "toBalanceSheetsSegue"
+    static let toCurrencies = "toCurrenciesSegue"
 }

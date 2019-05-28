@@ -29,15 +29,11 @@ extension UIViewController {
         indicator.startAnimating()
 
         view.addSubview(indicator)
-
-        UIApplication.shared.beginIgnoringInteractionEvents()
     }
 
     func stopLoading() {
         let loadingIndicator = view.viewWithTag(loadingIndicatorTag) as? NVActivityIndicatorView
         loadingIndicator?.stopAnimating()
         loadingIndicator?.removeFromSuperview()
-
-        UIApplication.shared.endIgnoringInteractionEvents()
     }
 }

@@ -15,7 +15,6 @@ enum Constants {
     static let testPrivateTokenKey = "testPrivateTokenKey"
     static let hasEnrolledInBiometricsKey = "hasEnrolledInBiometrics"
     static let hasAuthenticatedKey = "hasAuthenticatedKey"
-    static let IEXRegisterURL = "https://iexcloud.io/cloud-login#/register/"
     static let recentSearchesKey = "recentSearchesKey"
     static let environmentKey = "environmentKey"
 

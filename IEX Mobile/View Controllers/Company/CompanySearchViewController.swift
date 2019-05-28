@@ -75,6 +75,8 @@ class CompanySearchViewController: UIViewController {
         tableView.addSubview(refreshControl)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedSectionHeaderHeight = 50
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
     }
 
     var isFiltering: Bool {
@@ -106,10 +108,22 @@ extension CompanySearchViewController: UITableViewDelegate, UITableViewDataSourc
         return recentSearches.isEmpty ? 0 : UITableView.automaticDimension
     }
 
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as? UITableViewHeaderFooterView
-        header?.textLabel?.textColor = UIColor.IEX.main
-        header?.textLabel?.font = .preferredFont(forTextStyle: .headline)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        let textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.font = .preferredFont(forTextStyle: .headline)
+        textLabel.textColor = UIColor.IEX.main
+        textLabel.adjustsFontForContentSizeCategory = true
+        header.addSubview(textLabel)
+        header.backgroundColor = UIColor.IEX.lightGray
+        textLabel.leadingAnchor.constraint(equalTo: header.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        textLabel.trailingAnchor.constraint(equalTo: header.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        textLabel.topAnchor.constraint(equalTo: header.topAnchor, constant: 8).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: -8).isActive = true
+        textLabel.text =  section == 0 ? "Recent Searches" : "Available Companies"
+
+        return header
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

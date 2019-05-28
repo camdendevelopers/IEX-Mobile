@@ -78,6 +78,7 @@ class NewsArticleView: UIView {
     }
 
     @IBAction func articleTapped() {
+        guard IEXSwift.shared.environment != .testing else { return }
         guard let urlString = articleURL, let url = URL(string: urlString) else { return }
         delegate?.tapped(with: url)
     }

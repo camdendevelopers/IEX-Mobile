@@ -70,8 +70,7 @@ class AuthenticationViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonPressed() {
-        guard let url = URL(string: Constants.IEXRegisterURL) else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URLs.iexRegister, options: [:], completionHandler: nil)
     }
 
     @IBAction func confirmationButtonPressed() {
@@ -174,8 +173,7 @@ class AuthenticationViewController: UIViewController {
     }
 
     @IBAction func attributionButtonPressed() {
-        guard let url = URL(string: "https://iexcloud.io") else { return }
-        present(SFSafariViewController(url: url), animated: true, completion: nil)
+        present(SFSafariViewController(url: URLs.iexMain), animated: true, completion: nil)
     }
 }
 

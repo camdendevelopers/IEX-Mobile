@@ -42,10 +42,14 @@ class CompanyInformationViewController: UIViewController {
     @IBOutlet var newsStackView: UIStackView!
     @IBOutlet var chartStackView: UIStackView!
 
+    @IBOutlet var balanceSheetsButton: UIButton!
+    var balanceSheets: [BalanceSheet] = []
+
     var companyTicker: String = ""
     var chartRange: IEXChartRange = .ytd
     var companyInformation: CompanyInformation?
     var companyChartDataEntries: [CompanyChartDataItem] = []
+
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
@@ -55,12 +59,22 @@ class CompanyInformationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNotifications()
+        setupButtons()
         setupScrollView()
         setupChart()
         fetchCompanyInformation()
         fetchAdvancedStatistics()
         fetchCompanyNews()
         fetchChartData()
+    }
+
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeChanged), name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+
+    private func setupButtons() {
+        balanceSheetsButton.titleLabel?.adjustsFontForContentSizeCategory = true
     }
 
     private func setupScrollView() {
@@ -78,6 +92,9 @@ class CompanyInformationViewController: UIViewController {
     }
 
     private func fetchCompanyInformation() {
+        companyDescriptionActivityIndicator.isHidden = false
+        companyDescriptionActivityIndicator.alpha = 1
+        companyDescriptionActivityIndicator.startAnimating()
         IEXSwift.shared.fetchCompanyInformation(ticker: companyTicker) { result in
             guard result.isSuccess else {
                 self.navigationController?.popViewController(animated: true)
@@ -89,6 +106,7 @@ class CompanyInformationViewController: UIViewController {
             UIView.animate(withDuration: 0.35, animations: {
                 self.companyDescriptionActivityIndicator.alpha = 0
                 self.companyDescriptionActivityIndicator.isHidden = true
+                self.companyDescriptionActivityIndicator.stopAnimating()
                 self.companyDescriptionStackView.isHidden = false
             })
 
@@ -260,6 +278,34 @@ class CompanyInformationViewController: UIViewController {
         guard IEXSwift.shared.environment != .testing, let website = companyInformation?.website, !website.isEmpty else { return }
         guard let url = URL(string: website) else { return }
         present(SFSafariViewController(url: url), animated: true)
+    }
+
+    @IBAction func balanceSheetsButtonPressed() {
+        startLoading()
+        IEXSwift.shared.fetchBalanceSheets(ticker: companyTicker) { result in
+            self.stopLoading()
+            guard result.isSuccess else { return }
+
+            guard let balanceSheetData = result.value else { return }
+
+            self.balanceSheetsButton.isEnabled = true
+            self.balanceSheets = balanceSheetData.balancesheet
+            self.performSegue(withIdentifier: Segues.toBalanceSheets, sender: nil)
+        }
+    }
+
+    @objc private func preferredContentSizeChanged() {
+        let contentSize = UIApplication.shared.preferredContentSizeCategory
+        print(contentSize)
+
+        
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.toBalanceSheets {
+            let pageViewController = segue.destination as? BalanceSheetPageViewController
+            pageViewController?.balanceSheets = balanceSheets
+        }
     }
 }
 

@@ -17,12 +17,13 @@ extension IEXSwift {
 
         Alamofire.request(requestURL, method: .get, parameters: finalParameters).responseData(completionHandler: { response in
             if let error = response.error {
-                if let statusCode = response.response?.statusCode, 400...499 ~= statusCode {
-                    completion(.failure(IEXError.unauthorized))
-                }
-
                 completion(.failure(error))
                 return
+            }
+
+            if let statusCode = response.response?.statusCode, 400...499 ~= statusCode {
+                completion(.failure(IEXError.unauthorized))
+                return 
             }
 
             guard let data = response.data else {
