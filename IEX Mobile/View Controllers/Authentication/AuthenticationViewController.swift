@@ -166,7 +166,7 @@ class AuthenticationViewController: UIViewController {
                 IEXSwift.shared.environment = environment
             }
 
-            DispatchQueue.main.sync {
+            DispatchQueue.main.async {
                 self.performSegue(withIdentifier: Segues.toApplication, sender: nil)
             }
         }
