@@ -382,7 +382,11 @@
 		8DFF1F4A22751CD0005B807A /* IEXSwift */ = {
 			isa = PBXGroup;
 			children = (
-				8DFF1F6722781870005B807A /* Source */,
+				8DFF1F68227818D3005B807A /* Support */,
+				8DFF1F69227818E3005B807A /* Environment */,
+				8DFF1F662278184B005B807A /* Endpoints */,
+				8DFF1F6A2278191D005B807A /* Resources */,
+				8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */,
 			);
 			path = IEXSwift;
 			sourceTree = "<group>";
@@ -412,18 +416,6 @@
 				8D5FF9502279D07100938CED /* IEXAccountEndpoint.swift */,
 			);
 			path = Endpoints;
-			sourceTree = "<group>";
-		};
-		8DFF1F6722781870005B807A /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				8DFF1F68227818D3005B807A /* Support */,
-				8DFF1F69227818E3005B807A /* Environment */,
-				8DFF1F662278184B005B807A /* Endpoints */,
-				8DFF1F6A2278191D005B807A /* Resources */,
-				8DFF1F3E2273DAC8005B807A /* IEXSwift.swift */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		8DFF1F68227818D3005B807A /* Support */ = {
