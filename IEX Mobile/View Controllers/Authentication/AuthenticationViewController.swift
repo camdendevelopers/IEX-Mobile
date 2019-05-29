@@ -143,7 +143,10 @@ class AuthenticationViewController: UIViewController {
             let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alert.addAction(action)
 
-            present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
+            
             return
         }
 
@@ -152,7 +155,11 @@ class AuthenticationViewController: UIViewController {
                 let alert = UIAlertController(title: "Authentication Error", message: "Something went wrong when try to authenticate. Please try again later", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
                 alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
+
                 return
             }
 
